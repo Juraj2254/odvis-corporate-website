@@ -3,9 +3,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ODVIS | Corporate Legal Services',
-  description: 'Premium corporate legal advisory and counsel',
-  generator: 'v0.app',
+  title: 'ODVIS — Legal',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   icons: {
     icon: '/favicon.svg',
   },
@@ -17,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className="antialiased">
+    <html lang="en">
+      <body>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
