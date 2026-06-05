@@ -47,8 +47,8 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-4 mb-4">
-              <span className="w-12 h-px bg-corporate" />
-              <span className="text-nav text-xs text-corporate">Usluge</span>
+              <span className="w-12 h-px bg-accent" />
+              <span className="text-nav text-xs text-accent">Usluge</span>
             </div>
             <h2 className="text-heading text-3xl lg:text-4xl text-foreground">
               Lorem ipsum<br />dolor sit amet
@@ -69,7 +69,7 @@ export function ServicesSection() {
               href={service.href}
               className="group bg-background p-8 lg:p-10 hover:bg-foreground transition-colors duration-300"
             >
-              <span className="text-meta text-xs text-corporate mb-6 block">
+              <span className="text-meta text-xs text-accent mb-6 block">
                 {service.number}
               </span>
               <h3 className="text-heading text-xl text-foreground group-hover:text-background mb-4 transition-colors duration-300">
@@ -78,7 +78,7 @@ export function ServicesSection() {
               <p className="text-body text-sm text-muted-foreground group-hover:text-muted-foreground/70 mb-8 transition-colors duration-300">
                 {service.description}
               </p>
-              <span className="inline-flex items-center gap-2 text-nav text-xs text-foreground group-hover:text-corporate transition-colors duration-300">
+              <span className="inline-flex items-center gap-2 text-nav text-xs text-foreground group-hover:text-accent transition-colors duration-300">
                 Saznajte više
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />

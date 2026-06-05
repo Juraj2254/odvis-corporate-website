@@ -29,8 +29,8 @@ export function TeamSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-4 mb-4">
-              <span className="w-12 h-px bg-corporate" />
-              <span className="text-nav text-xs text-corporate">Tim</span>
+              <span className="w-12 h-px bg-accent" />
+              <span className="text-nav text-xs text-accent">Tim</span>
             </div>
             <h2 className="text-heading text-3xl lg:text-4xl text-background">
               Lorem ipsum<br />dolor sit amet
@@ -48,7 +48,7 @@ export function TeamSection() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="group bg-foreground p-8 hover:bg-corporate transition-colors duration-300"
+              className="group bg-foreground p-8 hover:bg-accent transition-colors duration-300"
             >
               {/* Placeholder Avatar */}
               <div className="w-full aspect-[3/4] bg-secondary/10 border border-border mb-6 flex items-center justify-center">
@@ -60,7 +60,7 @@ export function TeamSection() {
               <h3 className="text-heading text-lg text-background mb-1">
                 {member.name}
               </h3>
-              <p className="text-nav text-xs text-corporate mb-4">
+              <p className="text-nav text-xs text-accent mb-4">
                 {member.role}
               </p>
               <p className="text-legal text-sm text-muted-foreground group-hover:text-background/70 transition-colors duration-300">

@@ -9,15 +9,15 @@ export function HeroSection() {
           <div className="lg:col-span-7">
             {/* Eyebrow */}
             <div className="flex items-center gap-4 mb-8">
-              <span className="w-12 h-px bg-corporate" />
-              <span className="text-nav text-xs text-corporate">Odvjetničko društvo</span>
+              <span className="w-12 h-px bg-accent" />
+              <span className="text-nav text-xs text-accent">Odvjetničko društvo</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-hero text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-8">
               Lorem ipsum<br />
               dolor sit amet<br />
-              <span className="text-corporate">consectetur</span>
+              <span className="text-accent">consectetur</span>
             </h1>
 
             {/* Description */}
@@ -29,13 +29,13 @@ export function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#kontakt"
-                className="text-button text-sm bg-foreground text-background px-8 py-4 hover:bg-corporate transition-colors duration-200"
+                className="text-button text-sm bg-foreground text-background px-8 py-4 hover:bg-accent transition-colors duration-200"
               >
                 Zatražite konzultacije
               </Link>
               <Link
                 href="#usluge"
-                className="text-button text-sm border border-foreground text-foreground px-8 py-4 hover:border-corporate hover:text-corporate transition-colors duration-200"
+                className="text-button text-sm border border-foreground text-foreground px-8 py-4 hover:border-corporate hover:text-accent transition-colors duration-200"
               >
                 Saznajte više
               </Link>
@@ -55,7 +55,7 @@ export function HeroSection() {
                   <p className="text-legal text-sm text-muted-foreground mt-2">Consectetur adipiscing</p>
                 </div>
                 <div>
-                  <span className="text-hero text-5xl lg:text-6xl text-corporate">98%</span>
+                  <span className="text-hero text-5xl lg:text-6xl text-accent">98%</span>
                   <p className="text-legal text-sm text-muted-foreground mt-2">Sed do eiusmod</p>
                 </div>
               </div>

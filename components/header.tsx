@@ -33,7 +33,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-nav text-xs text-foreground hover:text-corporate transition-colors duration-200"
+                className="text-nav text-xs text-foreground hover:text-accent transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -44,7 +44,7 @@ export function Header() {
           <div className="flex items-center gap-6">
             <Link
               href="#kontakt"
-              className="hidden sm:block text-button text-sm bg-foreground text-background px-6 py-3 hover:bg-corporate transition-colors duration-200"
+              className="hidden sm:block text-button text-sm bg-foreground text-background px-6 py-3 hover:bg-accent transition-colors duration-200"
             >
               Zatražite konzultacije
             </Link>

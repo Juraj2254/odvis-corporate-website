@@ -42,7 +42,7 @@ export function Footer() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 border border-border flex items-center justify-center hover:border-corporate hover:text-corporate transition-colors duration-200"
+                className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent hover:text-accent transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 border border-border flex items-center justify-center hover:border-corporate hover:text-corporate transition-colors duration-200"
+                className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent hover:text-accent transition-colors duration-200"
                 aria-label="Twitter"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

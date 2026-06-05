@@ -7,14 +7,14 @@ export function AboutSection() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-4 mb-4">
               <span className="w-12 h-px bg-corporate" />
-              <span className="text-nav text-xs text-corporate">O nama</span>
+              <span className="text-nav text-xs text-accent">O nama</span>
             </div>
             <h2 className="text-heading text-3xl lg:text-4xl text-foreground mb-12">
               Lorem ipsum dolor<br />sit amet consectetur
             </h2>
 
             {/* Quote Block */}
-            <div className="border-l-2 border-corporate pl-8">
+            <div className="border-l-2 border-accent pl-8">
               <p className="text-body text-xl text-foreground italic mb-6">
                 &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.&rdquo;
               </p>
