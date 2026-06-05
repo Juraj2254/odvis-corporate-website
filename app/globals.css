@@ -92,11 +92,16 @@
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
   
   /* Layout */
-  --max-width: 1400px;
+  --max-width: 1440px;
   --grid-gap: 2rem;
-  --section-padding: clamp(4rem, 10vw, 8rem);
+  --section-padding: clamp(5rem, 12vw, 10rem);
+  --container-padding-mobile: 1.5rem;
+  --container-padding-tablet: 3rem;
+  --container-padding-desktop: 5rem;
 }
 
 /* Reset & Base */
