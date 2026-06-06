@@ -99,7 +99,7 @@
   --max-width: 1440px;
   --grid-gap: 2rem;
   --section-padding: clamp(5rem, 12vw, 10rem);
-  --container-padding-mobile: 1.5rem;
+  --container-padding-mobile: 2rem;
   --container-padding-tablet: 3rem;
   --container-padding-desktop: 5rem;
 }
@@ -142,12 +142,18 @@ a {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--container-padding-mobile);
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 0 var(--space-12);
+    padding: 0 var(--container-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--container-padding-desktop);
   }
 }
 
