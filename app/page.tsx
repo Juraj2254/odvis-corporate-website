@@ -1,3 +1,4 @@
+
 export default function Page() {
   return (
     <>
@@ -5,19 +6,30 @@ export default function Page() {
       <header className="header">
         <div className="container header__inner">
           <a href="/" aria-label="ODVIS Home">
-            <img src="/logos/odvis-wordmark-dark.svg" alt="ODVIS" className="header__logo" />
+<img src="/logos/odvis-wordmark-primary-light.svg" alt="ODVIS" className="header__logo" />
           </a>
 
           <nav className="header__nav" aria-label="Main navigation">
             <a href="#services" className="header__nav-link">Services</a>
             <a href="#about" className="header__nav-link">About</a>
             <a href="#expertise" className="header__nav-link">Expertise</a>
-            <a href="#team" className="header__nav-link">Team</a>
+<a href="/team" className="header__nav-link">Team</a>
             <a href="#contact" className="header__nav-link">Contact</a>
           </nav>
 
           <div className="header__contact">
-            <span className="header__lang">EN</span>
+            <div className="header__lang-dropdown" aria-label="Language selector">
+              <button className="header__lang-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+                <span className="header__lang-current">EN</span>
+                <svg className="header__lang-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="header__lang-menu" role="menu" aria-label="Language options">
+                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem">EN</a>
+                <a href="#" className="header__lang-option" role="menuitem">hr</a>
+              </div>
+            </div>
             <button className="header__cta">Get in Touch</button>
             <button className="header__menu-btn" aria-label="Open menu">
               <span></span>
@@ -32,33 +44,10 @@ export default function Page() {
         {/* HERO */}
         <section className="hero">
           <div className="container hero__inner">
-            <span className="hero__label">Lorem Ipsum Dolor 2008</span>
             <h1 className="hero__title">
-              Advocatus<br />
-              <span className="hero__title-accent">Fortis</span><br />
-              Lex Firma
+              The law is full of edges.<br />
+              That is where expertise lives.
             </h1>
-
-            <div className="hero__content">
-              <p className="hero__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-
-              <div className="hero__stats">
-                <div className="hero__stat">
-                  <div className="hero__stat-number">250+</div>
-                  <div className="hero__stat-label">Lorem Ipsum</div>
-                </div>
-                <div className="hero__stat">
-                  <div className="hero__stat-number">98%</div>
-                  <div className="hero__stat-label">Dolor Sit</div>
-                </div>
-                <div className="hero__stat">
-                  <div className="hero__stat-number">15+</div>
-                  <div className="hero__stat-label">Amet Consectetur</div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -262,58 +251,6 @@ export default function Page() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* TEAM */}
-        <section className="team" id="team">
-          <div className="container">
-            <div className="section-header">
-              <div>
-                <span className="section-label">04 — Team</span>
-                <h2 className="section-title">Excepteur Sint<br />Occaecat Cupidatat</h2>
-              </div>
-              <p className="section-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-              </p>
-            </div>
-
-            <div className="team__grid">
-              <div className="team__member">
-                <div className="team__member-image"></div>
-                <h3 className="team__member-name">Lorem Ipsum</h3>
-                <span className="team__member-role">Dolor Sit Amet</span>
-                <p className="team__member-bio">
-                  Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-
-              <div className="team__member">
-                <div className="team__member-image"></div>
-                <h3 className="team__member-name">Consectetur Elit</h3>
-                <span className="team__member-role">Adipiscing Tempor</span>
-                <p className="team__member-bio">
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.
-                </p>
-              </div>
-
-              <div className="team__member">
-                <div className="team__member-image"></div>
-                <h3 className="team__member-name">Adipiscing Sed</h3>
-                <span className="team__member-role">Eiusmod Incididunt</span>
-                <p className="team__member-bio">
-                  Eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="cta">
-          <div className="container cta__inner">
-            <h2 className="cta__title">Lorem Ipsum Dolor Sit Amet Consectetur?</h2>
-            <button className="cta__button">Adipiscing Elit</button>
           </div>
         </section>
 
