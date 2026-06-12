@@ -11,10 +11,20 @@ export default function Page() {
 
           <nav className="header__nav" aria-label="Main navigation">
             <a href="#services" className="header__nav-link">Services</a>
-            <a href="#about" className="header__nav-link">About</a>
             <a href="#expertise" className="header__nav-link">Expertise</a>
-<a href="/team" className="header__nav-link">Team</a>
-            <a href="#contact" className="header__nav-link">Contact</a>
+            <div className="header__firm-dropdown" aria-label="The firm">
+              <button className="header__firm-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+                <span>The Firm</span>
+                <svg className="header__firm-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="header__firm-menu" role="menu" aria-label="The firm options">
+                <a href="#about" className="header__firm-option" role="menuitem">about</a>
+                <a href="/team" className="header__firm-option" role="menuitem">team</a>
+                <a href="#contact" className="header__firm-option" role="menuitem">contact</a>
+              </div>
+            </div>
           </nav>
 
           <div className="header__contact">
