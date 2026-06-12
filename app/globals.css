@@ -285,16 +285,14 @@ a {
   text-transform: uppercase;
 }
 
-.header__lang-dropdown:hover .header__lang-menu,
-.header__lang-dropdown:focus-within .header__lang-menu {
+.header__lang-dropdown--open .header__lang-menu {
   transform: translate(-50%, 0);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.header__lang-dropdown:hover .header__lang-arrow,
-.header__lang-dropdown:focus-within .header__lang-arrow {
+.header__lang-dropdown--open .header__lang-arrow {
   transform: rotate(180deg);
 }
 
@@ -314,17 +312,23 @@ a {
   border: 0;
   background: transparent;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: var(--font-family);
   font-size: var(--font-size-sm);
   font-weight: var(--font-medium);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #FFFFFF;
   line-height: 2;
-  position: relative;
   transition: color 0.2s ease;
 }
 
-.header__firm-trigger::before {
+.header__firm-trigger-text {
+  position: relative;
+}
+
+.header__firm-trigger-text::before {
   content: '';
   width: 0;
   height: 2px;
@@ -336,12 +340,14 @@ a {
   transition: width 0.4s, left 0.4s;
 }
 
-.header__firm-trigger:hover::before {
+.header__firm-trigger:hover .header__firm-trigger-text::before,
+.header__firm-dropdown--open .header__firm-trigger-text::before {
   width: 100%;
   left: 0;
 }
 
-.header__firm-trigger:hover {
+.header__firm-trigger:hover,
+.header__firm-dropdown--open .header__firm-trigger {
   color: var(--color-accent);
 }
 
@@ -387,16 +393,14 @@ a {
   text-transform: uppercase;
 }
 
-.header__firm-dropdown:hover .header__firm-menu,
-.header__firm-dropdown:focus-within .header__firm-menu {
+.header__firm-dropdown--open .header__firm-menu {
   transform: translate(-50%, 0);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.header__firm-dropdown:hover .header__firm-arrow,
-.header__firm-dropdown:focus-within .header__firm-arrow {
+.header__firm-dropdown--open .header__firm-arrow {
   transform: rotate(180deg);
 }
 
@@ -1093,11 +1097,13 @@ a {
   background-color: var(--color-foreground);
 }
 
-.header--light .header__firm-trigger {
+.header--light .header__firm-trigger,
+.header--light .header__firm-dropdown--open .header__firm-trigger {
   color: var(--color-foreground);
 }
 
-.header--light .header__firm-trigger:hover {
+.header--light .header__firm-trigger:hover,
+.header--light .header__firm-dropdown--open .header__firm-trigger {
   color: var(--color-accent);
 }
 

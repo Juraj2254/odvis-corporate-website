@@ -1,4 +1,7 @@
+"use client"
+
 import Link from 'next/link'
+import { useState, useEffect, useRef } from "react"
 
 const teamMembers = [
   { slug: 'member-01', firstName: 'Lorem', lastName: 'Ipsum', role: 'Senior Partner' },
@@ -9,6 +12,54 @@ const teamMembers = [
 ]
 
 export default function TeamPage() {
+  const [firmOpen, setFirmOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const firmRef = useRef<HTMLDivElement>(null)
+  const langRef = useRef<HTMLDivElement>(null)
+  const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (firmRef.current && !firmRef.current.contains(event.target as Node)) {
+        setFirmOpen(false)
+      }
+      if (langRef.current && !langRef.current.contains(event.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setFirmOpen(false)
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleEscape)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleEscape)
+    }
+  }, [])
+
+  const openFirm = () => {
+    if (firmTimer.current) clearTimeout(firmTimer.current)
+    setFirmOpen(true)
+  }
+  const closeFirm = () => {
+    firmTimer.current = setTimeout(() => setFirmOpen(false), 200)
+  }
+  const toggleFirm = () => setFirmOpen((prev) => !prev)
+
+  const openLang = () => {
+    if (langTimer.current) clearTimeout(langTimer.current)
+    setLangOpen(true)
+  }
+  const closeLang = () => {
+    langTimer.current = setTimeout(() => setLangOpen(false), 200)
+  }
+  const toggleLang = () => setLangOpen((prev) => !prev)
+
   return (
     <>
       <header className="header header--light">
@@ -20,32 +71,56 @@ export default function TeamPage() {
           <nav className="header__nav" aria-label="Main navigation">
             <a href="/#services" className="header__nav-link header__nav-link--dark">Services</a>
             <a href="/#expertise" className="header__nav-link header__nav-link--dark">Expertise</a>
-            <div className="header__firm-dropdown" aria-label="The firm">
-              <button className="header__firm-trigger header__firm-trigger--dark" type="button" aria-haspopup="true" aria-expanded="false">
-                <span>The Firm</span>
+            <div
+              ref={firmRef}
+              className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
+              aria-label="The firm"
+              onMouseEnter={openFirm}
+              onMouseLeave={closeFirm}
+            >
+              <button
+                className="header__firm-trigger header__firm-trigger--dark"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={firmOpen}
+                onClick={toggleFirm}
+              >
+                <span className="header__firm-trigger-text">The Firm</span>
                 <svg className="header__firm-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               <div className="header__firm-menu" role="menu" aria-label="The firm options">
-                <a href="/#about" className="header__firm-option" role="menuitem">about</a>
-                <a href="/team" className="header__firm-option header__firm-option--active" role="menuitem">team</a>
-                <a href="/#contact" className="header__firm-option" role="menuitem">contact</a>
+                <a href="/#about" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>about</a>
+                <a href="/team" className="header__firm-option header__firm-option--active" role="menuitem" onClick={() => setFirmOpen(false)}>team</a>
+                <a href="/#contact" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>contact</a>
               </div>
             </div>
           </nav>
 
           <div className="header__contact">
-            <div className="header__lang-dropdown" aria-label="Language selector">
-              <button className="header__lang-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <div
+              ref={langRef}
+              className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}
+              aria-label="Language selector"
+              onMouseEnter={openLang}
+              onMouseLeave={closeLang}
+            >
+              <button
+                className="header__lang-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={langOpen}
+                onClick={toggleLang}
+              >
                 <span className="header__lang-current">EN</span>
                 <svg className="header__lang-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               <div className="header__lang-menu" role="menu" aria-label="Language options">
-                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem">EN</a>
-                <a href="#" className="header__lang-option" role="menuitem">hr</a>
+                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>EN</a>
+                <a href="#" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
               </div>
             </div>
             <button className="header__cta">Get in Touch</button>
