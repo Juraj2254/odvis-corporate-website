@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -55,19 +54,20 @@ export default function Page() {
   return (
     <>
       {/* HEADER */}
+      <html lang="hr" />
       <header className="header">
         <div className="container header__inner">
-          <a href="/" aria-label="ODVIS Home">
-<img src="/logos/odvis-wordmark-primary-light.svg" alt="ODVIS" className="header__logo" />
+          <a href="/" aria-label="ODVIS Početna">
+            <img src="/logos/odvis-wordmark-primary-light.svg" alt="ODVIS" className="header__logo" />
           </a>
 
-          <nav className="header__nav" aria-label="Main navigation">
-            <a href="#services" className="header__nav-link">Services</a>
-            <a href="#expertise" className="header__nav-link">Expertise</a>
+          <nav className="header__nav" aria-label="Glavna navigacija">
+            <a href="#usluge" className="header__nav-link">USLUGE</a>
+            <a href="#strucnost" className="header__nav-link">STRUČNOST</a>
             <div
               ref={firmRef}
               className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
-              aria-label="The firm"
+              aria-label="Ured"
               onMouseEnter={openFirm}
               onMouseLeave={closeFirm}
             >
@@ -78,15 +78,15 @@ export default function Page() {
                 aria-expanded={firmOpen}
                 onClick={toggleFirm}
               >
-                <span className="header__firm-trigger-text">The Firm</span>
+                <span className="header__firm-trigger-text">URED</span>
                 <svg className="header__firm-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <div className="header__firm-menu" role="menu" aria-label="The firm options">
-                <a href="#about" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>about</a>
-                <a href="/team" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>team</a>
-                <a href="#contact" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>contact</a>
+              <div className="header__firm-menu" role="menu" aria-label="Opcije ureda">
+                <a href="#o-nama" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>o nama</a>
+                <a href="/hr/tim" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>tim</a>
+                <a href="#kontakt" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>kontakt</a>
               </div>
             </div>
           </nav>
@@ -95,7 +95,7 @@ export default function Page() {
             <div
               ref={langRef}
               className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}
-              aria-label="Language selector"
+              aria-label="Odabir jezika"
               onMouseEnter={openLang}
               onMouseLeave={closeLang}
             >
@@ -106,18 +106,18 @@ export default function Page() {
                 aria-expanded={langOpen}
                 onClick={toggleLang}
               >
-                <span className="header__lang-current">EN</span>
+                <span className="header__lang-current">HR</span>
                 <svg className="header__lang-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <div className="header__lang-menu" role="menu" aria-label="Language options">
-                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>EN</a>
-                <a href="/hr" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
+              <div className="header__lang-menu" role="menu" aria-label="Jezične opcije">
+                <a href="/" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>en</a>
+                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
               </div>
             </div>
-            <button className="header__cta">Get in Touch</button>
-            <button className="header__menu-btn" aria-label="Open menu">
+            <button className="header__cta">KONTAKT</button>
+            <button className="header__menu-btn" aria-label="Otvori izbornik">
               <span></span>
               <span></span>
               <span></span>
@@ -138,27 +138,27 @@ export default function Page() {
         </section>
 
         {/* SERVICES */}
-        <section className="services" id="services">
+        <section className="services" id="usluge">
           <div className="container">
             <div className="section-header">
               <div>
-                <span className="section-label">01 Services</span>
-                <h2 className="section-title">Areas of Practice</h2>
+                <span className="section-label">01 USLUGE</span>
+                <h2 className="section-title">Područja prakse</h2>
               </div>
               <p className="section-description">
-                We provide comprehensive legal support with a focus on public procurement law, property law, and general legal services for businesses and individuals.
+                Pružamo sveobuhvatnu pravnu podršku s fokusom na pravo javne nabave, pravo nekretnina i opće pravne usluge za poduzeća i građane.
               </p>
             </div>
 
             <div className="services__grid">
               <div className="service-card">
                 <span className="service-card__number">01</span>
-                <h3 className="service-card__title">Public Procurement Law</h3>
+                <h3 className="service-card__title">Pravo javne nabave</h3>
                 <p className="service-card__description">
-                  Extensive experience in legal support for public procurement procedures, covering bid preparation, appeals against documentation and representation in administrative disputes before the State Commission (DKOM).
+                  Bogato iskustvo u pravnoj podršci postupcima javne nabave, od pripreme ponuda i žalbi na dokumentaciju do zastupanja u upravnim sporovima pred Državnom komisijom (DKOM).
                 </p>
                 <a href="#" className="service-card__link">
-                  Learn more
+                  Saznajte više
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -167,12 +167,12 @@ export default function Page() {
 
               <div className="service-card">
                 <span className="service-card__number">02</span>
-                <h3 className="service-card__title">Real Estate & Land Registry Law</h3>
+                <h3 className="service-card__title">Pravo nekretnina i zemljišnih knjiga</h3>
                 <p className="service-card__description">
-                  Legal assistance in all procedures related to real estate acquisition and disposal, registration of property rights in the land registry, and resolution of ownership disputes.
+                  Pravna pomoć u svim postupcima vezanim uz stjecanje i raspolaganje nekretninama, upis prava vlasništva u zemljišne knjige te rješavanje vlasničkih sporova.
                 </p>
                 <a href="#" className="service-card__link">
-                  Learn more
+                  Saznajte više
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -181,12 +181,12 @@ export default function Page() {
 
               <div className="service-card">
                 <span className="service-card__number">03</span>
-                <h3 className="service-card__title">Labour Law & Employment Contracts</h3>
+                <h3 className="service-card__title">Radno pravo i ugovori o radu</h3>
                 <p className="service-card__description">
-                  Employment contract preparation, drafting of general labour law acts, and representation in labour disputes for employers and employees at every stage of the employment relationship.
+                  Izrada ugovora o radu, izrada općih akata iz područja radnog prava te zastupanje u radnim sporovima za poslodavce i zaposlenike u svim fazama radnog odnosa.
                 </p>
                 <a href="#" className="service-card__link">
-                  Learn more
+                  Saznajte više
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -195,12 +195,12 @@ export default function Page() {
 
               <div className="service-card">
                 <span className="service-card__number">04</span>
-                <h3 className="service-card__title">General Legal Support</h3>
+                <h3 className="service-card__title">Opće pravne usluge</h3>
                 <p className="service-card__description">
-                  Business contract advisory, due diligence, debt collection, inheritance proceedings, company law, administrative procedures, and constitutional complaints.
+                  Savjetovanje o poslovnim ugovorima, due diligence, naplata potraživanja, nasljednopravni postupci, pravo trgovačkih društava, upravni postupci i ustavne tužbe.
                 </p>
                 <a href="#" className="service-card__link">
-                  Learn more
+                  Saznajte više
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -211,52 +211,52 @@ export default function Page() {
         </section>
 
         {/* ABOUT */}
-        <section className="about" id="about">
+        <section className="about" id="o-nama">
           <div className="container">
             <div className="section-header">
               <div>
-                <span className="section-label">02 About</span>
-                <h2 className="section-title">Law Firm Vešligaj<br />and Sliepčević</h2>
+                <span className="section-label">02 O NAMA</span>
+                <h2 className="section-title">Odvjetnički ured Vešligaj<br />i Sliepčević</h2>
               </div>
               <p className="section-description">
-                Founded in 2016 with the goal of delivering high-quality legal services to businesses and individuals.
+                Osnovan 2016. s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane.
               </p>
             </div>
 
             <div className="about__content">
               <div className="about__text">
                 <p>
-                  Law Firm Vešligaj and Sliepčević was founded in 2016 with the goal of delivering high-quality legal services to businesses and individuals. With many years of experience in the private sector, we provide comprehensive legal support tailored to each client, with a particular focus on small and medium-sized enterprises.
+                  Odvjetnički ured Vešligaj i Sliepčević osnovan je 2016. godine s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane. S dugogodišnjim iskustvom u privatnom sektoru, organiziramo sveobuhvatnu, individualno prilagođenu pravnu podršku, s posebnim fokusom na mala i srednja poduzeća.
                 </p>
                 <p>
-                  Our practice is built on a simple conviction: the best outcome is one reached without unnecessary conflict. We advise before disputes arise, represent with precision when they do, and bring the same standard of care to every matter, regardless of size.
+                  Naša praksa počiva na jednostavnom uvjerenju: najbolji ishod je onaj postignut bez nepotrebnog sukoba. Savjetujemo prije nastanka sporova, zastupamo s preciznošću kada do njih dođe, i svaku stvar tretiramo s istim standardom pažnje, bez obzira na njezinu veličinu.
                 </p>
               </div>
 
               <div className="about__features">
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">Certified for Public Procurement</span>
+                  <span className="about__feature-text">CERTIFICIRANI ZA JAVNU NABAVU</span>
                 </div>
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">Authorised Mediator</span>
+                  <span className="about__feature-text">OVLAŠTENI POSREDNIK</span>
                 </div>
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">Specialised DKOM Practice</span>
+                  <span className="about__feature-text">SPECIJALIZIRANA DKOM PRAKSA</span>
                 </div>
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">SME-Focused Legal Support</span>
+                  <span className="about__feature-text">PRAVNA PODRŠKA ZA MSP-ove</span>
                 </div>
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">Dispute Prevention First</span>
+                  <span className="about__feature-text">PREVENCIJA SPOROVA NA PRVOM MJESTU</span>
                 </div>
                 <div className="about__feature">
                   <div className="about__feature-icon"></div>
-                  <span className="about__feature-text">Precision in Representation</span>
+                  <span className="about__feature-text">PRECIZNOST U ZASTUPANJU</span>
                 </div>
               </div>
             </div>
@@ -264,15 +264,15 @@ export default function Page() {
         </section>
 
         {/* EXPERTISE */}
-        <section className="expertise" id="expertise">
+        <section className="expertise" id="strucnost">
           <div className="container">
             <div className="section-header">
               <div>
-                <span className="section-label">03 Expertise</span>
-                <h2 className="section-title">DKOM Practice</h2>
+                <span className="section-label">03 STRUČNOST</span>
+                <h2 className="section-title">Praksa pred DKOM-om</h2>
               </div>
               <p className="section-description">
-                The State Commission for the Supervision of Public Procurement Procedures (DKOM) is the arena where contracts worth millions are decided. Our experience in representing clients before DKOM spans a wide range of cases, from documentation appeals to full administrative dispute proceedings.
+                Državna komisija za kontrolu postupaka javne nabave (DKOM) arena je u kojoj se odlučuje o ugovorima vrijednima milijune. Naše iskustvo u zastupanju klijenata pred DKOM-om obuhvaća širok spektar predmeta, od žalbi na dokumentaciju do punih upravnospornih postupaka.
               </p>
             </div>
 
@@ -280,9 +280,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">01</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Appeals on tender documentation</h3>
+                  <h3 className="expertise__item-title">Žalbe na dokumentaciju za nadmetanje</h3>
                   <p className="expertise__item-description">
-                    Challenging unclear, discriminatory or unlawful tender terms before the contract is signed.
+                    Osporavanje nejasnih, diskriminatornih ili protuzakonitih uvjeta nadmetanja prije sklapanja ugovora.
                   </p>
                 </div>
               </div>
@@ -290,9 +290,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">02</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Representation in administrative disputes before DKOM</h3>
+                  <h3 className="expertise__item-title">Zastupanje u upravnim sporovima pred DKOM-om</h3>
                   <p className="expertise__item-description">
-                    Full procedural representation from the initial appeal to the final DKOM decision.
+                    Cjelovito procesno zastupanje od inicijalne žalbe do konačne odluke DKOM-a.
                   </p>
                 </div>
               </div>
@@ -300,9 +300,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">03</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Negotiation and consultation in contract conclusion</h3>
+                  <h3 className="expertise__item-title">Pregovaranje i konzultacije pri sklapanju ugovora</h3>
                   <p className="expertise__item-description">
-                    Advising on amendments, negotiations and finalisation of public procurement contracts.
+                    Savjetovanje o izmjenama, pregovorima i finalizaciji ugovora o javnoj nabavi.
                   </p>
                 </div>
               </div>
@@ -310,9 +310,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">04</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Challenging and defending abnormally low tenders</h3>
+                  <h3 className="expertise__item-title">Osporavanje i obrana abnormalno niskih ponuda</h3>
                   <p className="expertise__item-description">
-                    Acting for both contracting authorities and bidders in abnormally low price disputes.
+                    Zastupanje naručitelja i ponuditelja u sporovima vezanim uz abnormalno niske cijene.
                   </p>
                 </div>
               </div>
@@ -320,9 +320,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">05</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Technical and professional capacity requirements of tenderers</h3>
+                  <h3 className="expertise__item-title">Tehnička i stručna sposobnost ponuditelja</h3>
                   <p className="expertise__item-description">
-                    Reviewing qualification criteria and ensuring proportionate selection conditions.
+                    Pregled kvalifikacijskih kriterija i osiguravanje razmjernih uvjeta odabira.
                   </p>
                 </div>
               </div>
@@ -330,9 +330,9 @@ export default function Page() {
               <div className="expertise__item">
                 <span className="expertise__item-number">06</span>
                 <div className="expertise__item-content">
-                  <h3 className="expertise__item-title">Equal treatment of candidates in public procurement</h3>
+                  <h3 className="expertise__item-title">Jednako postupanje prema natjecateljima</h3>
                   <p className="expertise__item-description">
-                    Protecting fair competition and transparency throughout the procurement process.
+                    Zaštita poštenog tržišnog natjecanja i transparentnosti u cijelom postupku nabave.
                   </p>
                 </div>
               </div>
@@ -341,63 +341,63 @@ export default function Page() {
         </section>
 
         {/* CONTACT */}
-        <section className="contact" id="contact">
+        <section className="contact" id="kontakt">
           <div className="container">
             <div className="section-header">
               <div>
-                <span className="section-label">05 Contact</span>
-                <h2 className="section-title">Get in Touch</h2>
+                <span className="section-label">05 KONTAKT</span>
+                <h2 className="section-title">Kontaktirajte nas</h2>
               </div>
               <p className="section-description">
-                We are available on weekdays from 09:00 to 17:00. Appointments outside these hours are available by arrangement.
+                Dostupni smo radnim danima od 09:00 do 17:00 sati. Termini izvan redovnog radnog vremena dostupni su prema dogovoru.
               </p>
             </div>
 
             <div className="contact__inner">
               <div className="contact__info">
                 <div className="contact__block">
-                  <span className="contact__block-label">Email</span>
+                  <span className="contact__block-label">E-mail</span>
                   <div className="contact__block-value">
                     <a href="mailto:office@odvis.hr">office@odvis.hr</a>
                   </div>
                 </div>
 
                 <div className="contact__block">
-                  <span className="contact__block-label">Phone</span>
+                  <span className="contact__block-label">Telefon</span>
                   <div className="contact__block-value">
                     <a href="tel:+38516423963">+385 1 6423 963</a>
                   </div>
                 </div>
 
                 <div className="contact__block">
-                  <span className="contact__block-label">Address</span>
+                  <span className="contact__block-label">Adresa</span>
                   <div className="contact__block-value">
-                    Ulica Franje Lučića 9, 8th floor<br />
-                    New Zagreb – Siget, 10 000 Zagreb, Croatia
+                    Ulica Franje Lučića 9, VIII. kat<br />
+                    Novi Zagreb – Siget, 10 000 Zagreb
                   </div>
                   <p className="contact__directions">
-                    Tram lines 7 and 14 (Velesajam stop). Parking available in Lučićeva and surrounding streets (zone 2). Taxi stand on Lučićeva street.
+                    Tramvajske linije 7 i 14 (stanica Velesajam). Parkiranje u Lučićevoj i okolnim ulicama (zona 2). Taksi stanica u Lučićevoj ulici.
                   </p>
                 </div>
               </div>
 
               <form className="contact__form">
                 <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
+                  <label htmlFor="name" className="form-label">Ime</label>
                   <input type="text" id="name" name="name" className="form-input" required />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">E-mail</label>
                   <input type="email" id="email" name="email" className="form-input" required />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
+                  <label htmlFor="message" className="form-label">Poruka</label>
                   <textarea id="message" name="message" className="form-textarea" required></textarea>
                 </div>
 
-                <button type="submit" className="form-submit">Send message</button>
+                <button type="submit" className="form-submit">Pošalji poruku</button>
               </form>
             </div>
           </div>
@@ -411,45 +411,45 @@ export default function Page() {
             <div className="footer__brand">
               <img src="/logos/odvis-wordmark-light.svg" alt="ODVIS" className="footer__logo" />
               <p className="footer__tagline">
-                Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 2016.
+                Odvjetnički ured Vešligaj i Sliepčević. Specijalizirana pravna podrška za poduzeća i građane od 2016.
               </p>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">Services</h4>
+              <h4 className="footer__column-title">Usluge</h4>
               <ul className="footer__links">
-                <li><a href="#services" className="footer__link">Public Procurement Law</a></li>
-                <li><a href="#services" className="footer__link">Real Estate & Land Registry</a></li>
-                <li><a href="#services" className="footer__link">Labour Law & Contracts</a></li>
-                <li><a href="#services" className="footer__link">General Legal Support</a></li>
+                <li><a href="#usluge" className="footer__link">Pravo javne nabave</a></li>
+                <li><a href="#usluge" className="footer__link">Pravo nekretnina i zemljišnih knjiga</a></li>
+                <li><a href="#usluge" className="footer__link">Radno pravo i ugovori</a></li>
+                <li><a href="#usluge" className="footer__link">Opće pravne usluge</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">Expertise</h4>
+              <h4 className="footer__column-title">Stručnost</h4>
               <ul className="footer__links">
-                <li><a href="#expertise" className="footer__link">DKOM Practice</a></li>
-                <li><a href="#expertise" className="footer__link">Tender Appeals</a></li>
-                <li><a href="#expertise" className="footer__link">Administrative Disputes</a></li>
-                <li><a href="#expertise" className="footer__link">Equal Treatment</a></li>
+                <li><a href="#strucnost" className="footer__link">Praksa pred DKOM-om</a></li>
+                <li><a href="#strucnost" className="footer__link">Žalbe na natječajnu dokumentaciju</a></li>
+                <li><a href="#strucnost" className="footer__link">Upravni sporovi</a></li>
+                <li><a href="#strucnost" className="footer__link">Jednako postupanje</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">The Firm</h4>
+              <h4 className="footer__column-title">Ured</h4>
               <ul className="footer__links">
-                <li><a href="#about" className="footer__link">About</a></li>
-                <li><a href="/team" className="footer__link">Team</a></li>
-                <li><a href="#contact" className="footer__link">Contact</a></li>
+                <li><a href="#o-nama" className="footer__link">O nama</a></li>
+                <li><a href="/hr/tim" className="footer__link">Tim</a></li>
+                <li><a href="#kontakt" className="footer__link">Kontakt</a></li>
               </ul>
             </div>
           </div>
 
           <div className="footer__bottom">
-            <p className="footer__copyright">&copy; 2025 ODVIS. All rights reserved.</p>
+            <p className="footer__copyright">&copy; 2025 ODVIS. Sva prava pridržana.</p>
             <div className="footer__legal">
-              <a href="#" className="footer__legal-link">Privacy Policy</a>
-              <a href="#" className="footer__legal-link">Legal Notice</a>
+              <a href="#" className="footer__legal-link">Pravila privatnosti</a>
+              <a href="#" className="footer__legal-link">Pravna napomena</a>
             </div>
           </div>
         </div>

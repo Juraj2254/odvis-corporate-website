@@ -1,3 +1,4 @@
+
 /* ========================================
    ODVIS DESIGN SYSTEM
    Typography-led, minimal, premium, sharp
@@ -1059,7 +1060,7 @@ a {
 }
 
 /* ========================================
-   HEADER — LIGHT VARIANT
+   HEADER - LIGHT VARIANT
    ======================================== */
 .header--light {
   position: relative;
@@ -1150,15 +1151,15 @@ a {
 
 @media (min-width: 768px) {
   .team-page__grid {
-    grid-template-columns: repeat(auto-fit, minmax(212px, max-content));
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
   }
 }
 
 @media (min-width: 1200px) {
   .team-page__grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
   }
 }
 
@@ -1169,64 +1170,21 @@ a {
 }
 
 .team-page__member-image {
-  width: 288px;
-  max-width: 100%;
-  height: 320px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 800;
   background-color: var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: var(--space-6);
+  overflow: hidden;
 }
 
-@media (min-width: 375px) {
-  .team-page__member-image {
-    width: 343.2px;
-    height: 320px;
-  }
-}
-
-@media (min-width: 425px) {
-  .team-page__member-image {
-    width: 393.6px;
-    height: 320px;
-  }
-}
-
-@media (min-width: 768px) {
-  .team-page__member-image {
-    width: 211.988px;
-    height: 288px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .team-page__member-image {
-    width: 214.5px;
-    height: 393px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .team-page__member-image {
-    width: 318.5px;
-    height: 393px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .team-page__member-image {
-    width: 334.5px;
-    height: 393px;
-  }
-}
-
-.team-page__member-image-label {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-light);
-  color: var(--color-muted-foreground);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.team-page__member-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-page__member-name {

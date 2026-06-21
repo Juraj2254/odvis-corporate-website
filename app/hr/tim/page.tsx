@@ -4,10 +4,8 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from "react"
 
 const teamMembers = [
-  { slug: 'member-01', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Attorney at Law', image: '/team/member-01.jpg' },
-  { slug: 'member-02', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Attorney at Law', image: '/team/member-02.jpg' },
-  { slug: 'member-03', firstName: 'Ana', lastName: 'Marić', role: 'Associate', image: '/team/member-03.jpg' },
-  { slug: 'member-04', firstName: 'Petra', lastName: 'Kovač', role: 'Legal Consultant', image: '/team/member-04.jpg' },
+  { slug: 'member-01', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Odvjetnik', image: '/team/member-01.jpg' },
+  { slug: 'member-02', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Odvjetnik', image: '/team/member-02.jpg' },
 ]
 
 export default function TeamPage() {
@@ -63,17 +61,17 @@ export default function TeamPage() {
     <>
       <header className="header header--light">
         <div className="container header__inner">
-          <a href="/" aria-label="ODVIS Home">
+          <a href="/" aria-label="ODVIS Početna">
             <img src="/logos/odvis-wordmark-dark.svg" alt="ODVIS" className="header__logo" />
           </a>
 
-          <nav className="header__nav" aria-label="Main navigation">
-            <a href="/#services" className="header__nav-link header__nav-link--dark">Services</a>
-            <a href="/#expertise" className="header__nav-link header__nav-link--dark">Expertise</a>
+          <nav className="header__nav" aria-label="Glavna navigacija">
+            <a href="/#usluge" className="header__nav-link header__nav-link--dark">USLUGE</a>
+            <a href="/#strucnost" className="header__nav-link header__nav-link--dark">STRUČNOST</a>
             <div
               ref={firmRef}
               className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
-              aria-label="The firm"
+              aria-label="Ured"
               onMouseEnter={openFirm}
               onMouseLeave={closeFirm}
             >
@@ -84,15 +82,15 @@ export default function TeamPage() {
                 aria-expanded={firmOpen}
                 onClick={toggleFirm}
               >
-                <span className="header__firm-trigger-text">The Firm</span>
+                <span className="header__firm-trigger-text">URED</span>
                 <svg className="header__firm-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <div className="header__firm-menu" role="menu" aria-label="The firm options">
-                <a href="/#about" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>about</a>
-                <a href="/team" className="header__firm-option header__firm-option--active" role="menuitem" onClick={() => setFirmOpen(false)}>team</a>
-                <a href="/#contact" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>contact</a>
+              <div className="header__firm-menu" role="menu" aria-label="Opcije ureda">
+                <a href="/#o-nama" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>o nama</a>
+                <a href="/hr/tim" className="header__firm-option header__firm-option--active" role="menuitem" onClick={() => setFirmOpen(false)}>tim</a>
+                <a href="/#kontakt" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>kontakt</a>
               </div>
             </div>
           </nav>
@@ -101,7 +99,7 @@ export default function TeamPage() {
             <div
               ref={langRef}
               className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}
-              aria-label="Language selector"
+              aria-label="Odabir jezika"
               onMouseEnter={openLang}
               onMouseLeave={closeLang}
             >
@@ -112,18 +110,18 @@ export default function TeamPage() {
                 aria-expanded={langOpen}
                 onClick={toggleLang}
               >
-                <span className="header__lang-current">EN</span>
+                <span className="header__lang-current">HR</span>
                 <svg className="header__lang-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <div className="header__lang-menu" role="menu" aria-label="Language options">
-                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>EN</a>
-                <a href="/hr/tim" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
+              <div className="header__lang-menu" role="menu" aria-label="Jezične opcije">
+                <a href="/team" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>en</a>
+                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
               </div>
             </div>
-            <button className="header__cta">Get in Touch</button>
-            <button className="header__menu-btn" aria-label="Open menu">
+            <button className="header__cta">KONTAKT</button>
+            <button className="header__menu-btn" aria-label="Otvori izbornik">
               <span></span>
               <span></span>
               <span></span>
@@ -135,22 +133,22 @@ export default function TeamPage() {
       <main>
         <section className="team-page">
           <div className="container">
-            <h1 className="team-page__title">Our team</h1>
+            <h1 className="team-page__title">Naš tim</h1>
             <p className="team-page__quote">
-              We create teams tailored to navigate your legal challenges.
+              Gradimo timove prilagođene vašim pravnim izazovima.
             </p>
 
             <div className="team-page__grid">
               {teamMembers.map((member) => (
                 <Link
                   key={member.slug}
-                  href={`/team/${member.slug}`}
+                  href={`/hr/tim/${member.slug}`}
                   className="team-page__member"
                 >
                   <div className="team-page__member-image">
                     <img
                       src={member.image}
-                      alt={`Portrait of ${member.firstName} ${member.lastName}`}
+                      alt={`Portret: ${member.firstName} ${member.lastName}`}
                       className="team-page__member-img"
                       loading="lazy"
                     />
@@ -172,45 +170,45 @@ export default function TeamPage() {
             <div className="footer__brand">
               <img src="/logos/odvis-wordmark-light.svg" alt="ODVIS" className="footer__logo" />
               <p className="footer__tagline">
-                Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 2016.
+                Odvjetnički ured Vešligaj i Sliepčević. Specijalizirana pravna podrška za poduzeća i građane od 2016.
               </p>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">Services</h4>
+              <h4 className="footer__column-title">Usluge</h4>
               <ul className="footer__links">
-                <li><a href="/#services" className="footer__link">Public Procurement Law</a></li>
-                <li><a href="/#services" className="footer__link">Real Estate & Land Registry</a></li>
-                <li><a href="/#services" className="footer__link">Labour Law & Contracts</a></li>
-                <li><a href="/#services" className="footer__link">General Legal Support</a></li>
+                <li><a href="/#usluge" className="footer__link">Pravo javne nabave</a></li>
+                <li><a href="/#usluge" className="footer__link">Pravo nekretnina i zemljišnih knjiga</a></li>
+                <li><a href="/#usluge" className="footer__link">Radno pravo i ugovori</a></li>
+                <li><a href="/#usluge" className="footer__link">Opće pravne usluge</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">Expertise</h4>
+              <h4 className="footer__column-title">Stručnost</h4>
               <ul className="footer__links">
-                <li><a href="/#expertise" className="footer__link">DKOM Practice</a></li>
-                <li><a href="/#expertise" className="footer__link">Tender Appeals</a></li>
-                <li><a href="/#expertise" className="footer__link">Administrative Disputes</a></li>
-                <li><a href="/#expertise" className="footer__link">Equal Treatment</a></li>
+                <li><a href="/#strucnost" className="footer__link">Praksa pred DKOM-om</a></li>
+                <li><a href="/#strucnost" className="footer__link">Žalbe na natječajnu dokumentaciju</a></li>
+                <li><a href="/#strucnost" className="footer__link">Upravni sporovi</a></li>
+                <li><a href="/#strucnost" className="footer__link">Jednako postupanje</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
-              <h4 className="footer__column-title">The Firm</h4>
+              <h4 className="footer__column-title">Ured</h4>
               <ul className="footer__links">
-                <li><a href="/#about" className="footer__link">About</a></li>
-                <li><a href="/team" className="footer__link">Team</a></li>
-                <li><a href="/#contact" className="footer__link">Contact</a></li>
+                <li><a href="/#o-nama" className="footer__link">O nama</a></li>
+                <li><a href="/hr/tim" className="footer__link">Tim</a></li>
+                <li><a href="/#kontakt" className="footer__link">Kontakt</a></li>
               </ul>
             </div>
           </div>
 
           <div className="footer__bottom">
-            <p className="footer__copyright">&copy; 2025 ODVIS. All rights reserved.</p>
+            <p className="footer__copyright">&copy; 2025 ODVIS. Sva prava pridržana.</p>
             <div className="footer__legal">
-              <a href="#" className="footer__legal-link">Privacy Policy</a>
-              <a href="#" className="footer__legal-link">Legal Notice</a>
+              <a href="#" className="footer__legal-link">Pravila privatnosti</a>
+              <a href="#" className="footer__legal-link">Pravna napomena</a>
             </div>
           </div>
         </div>

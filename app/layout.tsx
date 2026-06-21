@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ODVIS — Legal',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  title: 'ODVIS | Legal',
+  description: 'Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 2016.',
   icons: {
     icon: '/favicon.svg',
   },
