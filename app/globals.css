@@ -5,6 +5,24 @@
    Inspired by WAHL.hr
    ======================================== */
 
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens */
+@theme {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-background);
+  --color-card-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
+  --color-input: var(--color-border);
+  --color-primary: var(--color-foreground);
+  --color-primary-foreground: var(--color-background);
+  --color-ring: var(--color-foreground);
+}
+
 /* Satoshi Font Family */
 @font-face {
   font-family: 'Satoshi';
