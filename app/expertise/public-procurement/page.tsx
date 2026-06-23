@@ -1,33 +1,39 @@
 "use client"
 
-import Link from 'next/link'
 import { useState, useEffect, useRef } from "react"
+import { DataTable } from "@/components/ui/basic-data-table"
 
-const teamMembers = [
-  { slug: 'member-01', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Attorney at Law', image: '/team/member-01.jpg' },
-  { slug: 'member-02', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Attorney at Law', image: '/team/member-02.jpg' },
-  { slug: 'member-03', firstName: 'Ana', lastName: 'Marić', role: 'Associate', image: '/team/member-03.jpg' },
-  { slug: 'member-04', firstName: 'Petra', lastName: 'Kovač', role: 'Legal Consultant', image: '/team/member-04.jpg' },
+const cases = [
+  { id: 1, year: "2023", client: "Energy infrastructure investor", subject: "DKOM appeal on tender documentation", outcome: "Won", value: "EUR 4.2m" },
+  { id: 2, year: "2022", client: "Road construction consortium", subject: "Administrative dispute before DKOM", outcome: "Won", value: "EUR 12.5m" },
+  { id: 3, year: "2022", client: "Environmental services provider", subject: "Challenge of abnormally low tender", outcome: "Won", value: "EUR 1.8m" },
+  { id: 4, year: "2021", client: "Forestry management company", subject: "Equal treatment violation appeal", outcome: "Won", value: "EUR 3.1m" },
+  { id: 5, year: "2021", client: "Engineering design bureau", subject: "Technical capacity requirements dispute", outcome: "Won", value: "EUR 2.4m" },
+  { id: 6, year: "2020", client: "Renewable energy developer", subject: "Contract conclusion consultation", outcome: "Won", value: "EUR 7.6m" },
+  { id: 7, year: "2020", client: "Public utility contractor", subject: "Bid preparation and submission", outcome: "Won", value: "EUR 5.3m" },
+  { id: 8, year: "2019", client: "Waste management operator", subject: "Client decision appeal", outcome: "Won", value: "EUR 2.9m" },
 ]
 
-export default function TeamPage() {
+const columns = [
+  { key: "year", header: "Year", sortable: true, width: "80px" },
+  { key: "client", header: "Client / Sector", sortable: true, filterable: true },
+  { key: "subject", header: "Subject", sortable: true, filterable: true },
+  { key: "outcome", header: "Outcome", sortable: true, width: "100px" },
+  { key: "value", header: "Contract value", sortable: true, width: "130px" },
+]
+
+export default function PublicProcurementPage() {
   const [firmOpen, setFirmOpen] = useState(false)
-  const [expertiseOpen, setExpertiseOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const firmRef = useRef<HTMLDivElement>(null)
-  const expertiseRef = useRef<HTMLDivElement>(null)
   const langRef = useRef<HTMLDivElement>(null)
   const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (firmRef.current && !firmRef.current.contains(event.target as Node)) {
         setFirmOpen(false)
-      }
-      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) {
-        setExpertiseOpen(false)
       }
       if (langRef.current && !langRef.current.contains(event.target as Node)) {
         setLangOpen(false)
@@ -36,7 +42,6 @@ export default function TeamPage() {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setFirmOpen(false)
-        setExpertiseOpen(false)
         setLangOpen(false)
       }
     }
@@ -57,15 +62,6 @@ export default function TeamPage() {
   }
   const toggleFirm = () => setFirmOpen((prev) => !prev)
 
-  const openExpertise = () => {
-    if (expertiseTimer.current) clearTimeout(expertiseTimer.current)
-    setExpertiseOpen(true)
-  }
-  const closeExpertise = () => {
-    expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200)
-  }
-  const toggleExpertise = () => setExpertiseOpen((prev) => !prev)
-
   const openLang = () => {
     if (langTimer.current) clearTimeout(langTimer.current)
     setLangOpen(true)
@@ -85,33 +81,7 @@ export default function TeamPage() {
 
           <nav className="header__nav" aria-label="Main navigation">
             <a href="/#services" className="header__nav-link header__nav-link--dark">Services</a>
-            <div
-              ref={expertiseRef}
-              className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`}
-              aria-label="Expertise"
-              onMouseEnter={openExpertise}
-              onMouseLeave={closeExpertise}
-            >
-              <button
-                className="header__expertise-trigger header__expertise-trigger--dark"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={expertiseOpen}
-                onClick={toggleExpertise}
-              >
-                <span className="header__expertise-trigger-text">Expertise</span>
-                <svg className="header__expertise-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div className="header__expertise-menu" role="menu" aria-label="Expertise options">
-                <a href="/expertise/public-procurement" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>procurement</a>
-                <a href="/expertise/real-estate" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>real estate</a>
-                <a href="/expertise/labour-law" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>labour</a>
-                <a href="/expertise/general-legal" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>general</a>
-                <a href="/expertise/dkom" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>DKOM</a>
-              </div>
-            </div>
+            <a href="/#expertise" className="header__nav-link header__nav-link--dark">Expertise</a>
             <div
               ref={firmRef}
               className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
@@ -133,7 +103,7 @@ export default function TeamPage() {
               </button>
               <div className="header__firm-menu" role="menu" aria-label="The firm options">
                 <a href="/#about" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>about</a>
-                <a href="/team" className="header__firm-option header__firm-option--active" role="menuitem" onClick={() => setFirmOpen(false)}>team</a>
+                <a href="/team" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>team</a>
                 <a href="/#contact" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>contact</a>
               </div>
             </div>
@@ -161,7 +131,7 @@ export default function TeamPage() {
               </button>
               <div className="header__lang-menu" role="menu" aria-label="Language options">
                 <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>EN</a>
-                <a href="/hr/tim" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
+                <a href="/hr/strucnost/javna-nabava" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
               </div>
             </div>
             <button className="header__cta">Get in Touch</button>
@@ -175,34 +145,44 @@ export default function TeamPage() {
       </header>
 
       <main>
-        <section className="team-page">
+        <section className="expertise-detail">
           <div className="container">
-            <h1 className="team-page__title">Our team</h1>
-            <p className="team-page__quote">
-              We create teams tailored to navigate your legal challenges.
-            </p>
+            <div className="section-header">
+              <div>
+                <span className="section-label">Expertise</span>
+                <h1 className="section-title">Public Procurement</h1>
+              </div>
+            </div>
 
-            <div className="team-page__grid">
-              {teamMembers.map((member) => (
-                <Link
-                  key={member.slug}
-                  href={`/team/${member.slug}`}
-                  className="team-page__member"
-                >
-                  <div className="team-page__member-image">
-                    <img
-                      src={member.image}
-                      alt={`Portrait of ${member.firstName} ${member.lastName}`}
-                      className="team-page__member-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 className="team-page__member-name">
-                    {member.firstName} {member.lastName}
-                  </h2>
-                  <span className="team-page__member-role">{member.role}</span>
-                </Link>
-              ))}
+            <div className="expertise-detail__content">
+              <p>
+                We have rich experience in providing legal support in public procurement procedures of
+              </p>
+              <ul>
+                <li>preparation and submission of bids,</li>
+                <li>appeals to the documentation and the client&apos;s decision,</li>
+                <li>representation in administrative disputes relating to decisions of the State Commission</li>
+                <li>consultation in the process of contracting</li>
+              </ul>
+              <p>
+                In addition the company has significant experience in representing clients in court and arbitration proceedings led on the occasion of disputes arising out of public contracts.
+              </p>
+              <p>
+                Significant areas in which we provide services in the field of public procurement as an area of environmental protection, forestry, planning and design of roads, as well as in the field of energy.
+              </p>
+            </div>
+
+            <div className="expertise-detail__table">
+              <h2 className="expertise-detail__table-title">Selected winning cases</h2>
+              <DataTable
+                data={cases}
+                columns={columns}
+                searchable
+                searchPlaceholder="Search cases..."
+                itemsPerPage={5}
+                showPagination
+                emptyMessage="No cases found"
+              />
             </div>
           </div>
         </section>

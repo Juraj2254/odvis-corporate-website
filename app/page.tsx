@@ -5,16 +5,22 @@ import { useState, useEffect, useRef } from "react"
 
 export default function Page() {
   const [firmOpen, setFirmOpen] = useState(false)
+  const [expertiseOpen, setExpertiseOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const firmRef = useRef<HTMLDivElement>(null)
+  const expertiseRef = useRef<HTMLDivElement>(null)
   const langRef = useRef<HTMLDivElement>(null)
   const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (firmRef.current && !firmRef.current.contains(event.target as Node)) {
         setFirmOpen(false)
+      }
+      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) {
+        setExpertiseOpen(false)
       }
       if (langRef.current && !langRef.current.contains(event.target as Node)) {
         setLangOpen(false)
@@ -23,6 +29,7 @@ export default function Page() {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setFirmOpen(false)
+        setExpertiseOpen(false)
         setLangOpen(false)
       }
     }
@@ -42,6 +49,15 @@ export default function Page() {
     firmTimer.current = setTimeout(() => setFirmOpen(false), 200)
   }
   const toggleFirm = () => setFirmOpen((prev) => !prev)
+
+  const openExpertise = () => {
+    if (expertiseTimer.current) clearTimeout(expertiseTimer.current)
+    setExpertiseOpen(true)
+  }
+  const closeExpertise = () => {
+    expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200)
+  }
+  const toggleExpertise = () => setExpertiseOpen((prev) => !prev)
 
   const openLang = () => {
     if (langTimer.current) clearTimeout(langTimer.current)
@@ -63,7 +79,33 @@ export default function Page() {
 
           <nav className="header__nav" aria-label="Main navigation">
             <a href="#services" className="header__nav-link">Services</a>
-            <a href="#expertise" className="header__nav-link">Expertise</a>
+            <div
+              ref={expertiseRef}
+              className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`}
+              aria-label="Expertise"
+              onMouseEnter={openExpertise}
+              onMouseLeave={closeExpertise}
+            >
+              <button
+                className="header__expertise-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={expertiseOpen}
+                onClick={toggleExpertise}
+              >
+                <span className="header__expertise-trigger-text">Expertise</span>
+                <svg className="header__expertise-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="header__expertise-menu" role="menu" aria-label="Expertise options">
+                <a href="/expertise/public-procurement" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>procurement</a>
+                <a href="/expertise/real-estate" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>real estate</a>
+                <a href="/expertise/labour-law" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>labour</a>
+                <a href="/expertise/general-legal" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>general</a>
+                <a href="/expertise/dkom" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>DKOM</a>
+              </div>
+            </div>
             <div
               ref={firmRef}
               className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
@@ -274,6 +316,10 @@ export default function Page() {
               <p className="section-description">
                 The State Commission for the Supervision of Public Procurement Procedures (DKOM) is the arena where contracts worth millions are decided. Our experience in representing clients before DKOM spans a wide range of cases, from documentation appeals to full administrative dispute proceedings.
               </p>
+            </div>
+
+            <div className="expertise__cta">
+              <a href="/expertise/public-procurement" className="header__cta">View our winning cases</a>
             </div>
 
             <div className="expertise__grid">

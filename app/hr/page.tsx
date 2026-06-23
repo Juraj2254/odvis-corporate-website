@@ -4,16 +4,22 @@ import { useState, useEffect, useRef } from "react"
 
 export default function Page() {
   const [firmOpen, setFirmOpen] = useState(false)
+  const [expertiseOpen, setExpertiseOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const firmRef = useRef<HTMLDivElement>(null)
+  const expertiseRef = useRef<HTMLDivElement>(null)
   const langRef = useRef<HTMLDivElement>(null)
   const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (firmRef.current && !firmRef.current.contains(event.target as Node)) {
         setFirmOpen(false)
+      }
+      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) {
+        setExpertiseOpen(false)
       }
       if (langRef.current && !langRef.current.contains(event.target as Node)) {
         setLangOpen(false)
@@ -22,6 +28,7 @@ export default function Page() {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setFirmOpen(false)
+        setExpertiseOpen(false)
         setLangOpen(false)
       }
     }
@@ -41,6 +48,15 @@ export default function Page() {
     firmTimer.current = setTimeout(() => setFirmOpen(false), 200)
   }
   const toggleFirm = () => setFirmOpen((prev) => !prev)
+
+  const openExpertise = () => {
+    if (expertiseTimer.current) clearTimeout(expertiseTimer.current)
+    setExpertiseOpen(true)
+  }
+  const closeExpertise = () => {
+    expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200)
+  }
+  const toggleExpertise = () => setExpertiseOpen((prev) => !prev)
 
   const openLang = () => {
     if (langTimer.current) clearTimeout(langTimer.current)
@@ -63,7 +79,33 @@ export default function Page() {
 
           <nav className="header__nav" aria-label="Glavna navigacija">
             <a href="#usluge" className="header__nav-link">USLUGE</a>
-            <a href="#strucnost" className="header__nav-link">STRUČNOST</a>
+            <div
+              ref={expertiseRef}
+              className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`}
+              aria-label="Stručnost"
+              onMouseEnter={openExpertise}
+              onMouseLeave={closeExpertise}
+            >
+              <button
+                className="header__expertise-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={expertiseOpen}
+                onClick={toggleExpertise}
+              >
+                <span className="header__expertise-trigger-text">STRUČNOST</span>
+                <svg className="header__expertise-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="header__expertise-menu" role="menu" aria-label="Opcije stručnosti">
+                <a href="/hr/strucnost/javna-nabava" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>nabava</a>
+                <a href="/hr/strucnost/nekretnine" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>nekretnine</a>
+                <a href="/hr/strucnost/radno-pravo" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>rad</a>
+                <a href="/hr/strucnost/opce-pravne-usluge" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>opće</a>
+                <a href="/hr/strucnost/dkom" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>DKOM</a>
+              </div>
+            </div>
             <div
               ref={firmRef}
               className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
@@ -274,6 +316,10 @@ export default function Page() {
               <p className="section-description">
                 Državna komisija za kontrolu postupaka javne nabave (DKOM) arena je u kojoj se odlučuje o ugovorima vrijednima milijune. Naše iskustvo u zastupanju klijenata pred DKOM-om obuhvaća širok spektar predmeta, od žalbi na dokumentaciju do punih upravnospornih postupaka.
               </p>
+            </div>
+
+            <div className="expertise__cta">
+              <a href="/hr/strucnost/javna-nabava" className="header__cta">Pogledajte naše dobivene predmete</a>
             </div>
 
             <div className="expertise__grid">
