@@ -1,28 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { DataTable } from "@/components/ui/basic-data-table"
 
-const cases = [
-  { id: 1, year: "2023", client: "Energy infrastructure investor", subject: "DKOM appeal on tender documentation", outcome: "Won", value: "EUR 4.2m" },
-  { id: 2, year: "2022", client: "Road construction consortium", subject: "Administrative dispute before DKOM", outcome: "Won", value: "EUR 12.5m" },
-  { id: 3, year: "2022", client: "Environmental services provider", subject: "Challenge of abnormally low tender", outcome: "Won", value: "EUR 1.8m" },
-  { id: 4, year: "2021", client: "Forestry management company", subject: "Equal treatment violation appeal", outcome: "Won", value: "EUR 3.1m" },
-  { id: 5, year: "2021", client: "Engineering design bureau", subject: "Technical capacity requirements dispute", outcome: "Won", value: "EUR 2.4m" },
-  { id: 6, year: "2020", client: "Renewable energy developer", subject: "Contract conclusion consultation", outcome: "Won", value: "EUR 7.6m" },
-  { id: 7, year: "2020", client: "Public utility contractor", subject: "Bid preparation and submission", outcome: "Won", value: "EUR 5.3m" },
-  { id: 8, year: "2019", client: "Waste management operator", subject: "Client decision appeal", outcome: "Won", value: "EUR 2.9m" },
-]
-
-const columns = [
-  { key: "year", header: "Year", sortable: true, width: "80px" },
-  { key: "client", header: "Client / Sector", sortable: true, filterable: true },
-  { key: "subject", header: "Subject", sortable: true, filterable: true },
-  { key: "outcome", header: "Outcome", sortable: true, width: "100px" },
-  { key: "value", header: "Contract value", sortable: true, width: "130px" },
-]
-
-export default function PublicProcurementPage() {
+export default function RealEstatePage() {
   const [firmOpen, setFirmOpen] = useState(false)
   const [expertiseOpen, setExpertiseOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
@@ -117,8 +97,8 @@ export default function PublicProcurementPage() {
                 </svg>
               </button>
               <div className="header__expertise-menu" role="menu" aria-label="Expertise options">
-                <a href="/expertise/public-procurement" className="header__expertise-option header__expertise-option--active" role="menuitem" onClick={() => setExpertiseOpen(false)}>Public Procurement</a>
-                <a href="/expertise/real-estate" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Real Estate</a>
+                <a href="/expertise/public-procurement" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Public Procurement</a>
+                <a href="/expertise/real-estate" className="header__expertise-option header__expertise-option--active" role="menuitem" onClick={() => setExpertiseOpen(false)}>Real Estate</a>
                 <a href="/expertise/labour-law" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Labor Law</a>
                 <a href="/expertise/general-legal" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>General Law</a>
               </div>
@@ -172,7 +152,7 @@ export default function PublicProcurementPage() {
               </button>
               <div className="header__lang-menu" role="menu" aria-label="Language options">
                 <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>EN</a>
-                <a href="/hr/strucnost/javna-nabava" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
+                <a href="/hr/strucnost/nekretnine" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
               </div>
             </div>
             <button className="header__cta">Get in Touch</button>
@@ -191,39 +171,57 @@ export default function PublicProcurementPage() {
             <div className="section-header">
               <div>
                 <span className="section-label">Expertise</span>
-                <h1 className="section-title">Public Procurement</h1>
+                <h1 className="section-title">Real Estate and Land Registry Law</h1>
               </div>
             </div>
 
-            <div className="expertise-detail__content">
-              <p>
-                We have rich experience in providing legal support in public procurement procedures of
-              </p>
-              <ul>
-                <li>preparation and submission of bids,</li>
-                <li>appeals to the documentation and the client&apos;s decision,</li>
-                <li>representation in administrative disputes relating to decisions of the State Commission</li>
-                <li>consultation in the process of contracting</li>
-              </ul>
-              <p>
-                In addition the company has significant experience in representing clients in court and arbitration proceedings led on the occasion of disputes arising out of public contracts.
-              </p>
-              <p>
-                Significant areas in which we provide services in the field of public procurement as an area of environmental protection, forestry, planning and design of roads, as well as in the field of energy.
-              </p>
-            </div>
+            <div className="expertise-detail__layout">
+              <div className="expertise-detail__content">
+                <p>
+                  We also have significant experience in providing legal assistance and the procedures relating to the acquisition and real estate
+                </p>
+                <ul>
+                  <li>Testing of the land conditions before concluding the contract,</li>
+                  <li>Advice on contracts,</li>
+                  <li>The preparation of all types of contracts in the real estate trading</li>
+                  <li>Registration of property rights in the land registry,</li>
+                  <li>Representation in ownership disputes,</li>
+                  <li>The preparation of all necessary documents in the process of dissolution of co-ownership, condominium, linking land registers and books of deposited contracts and the implementation thereof in the land registry (which by law can not produce qualified experts architectural, construction or surveying profession)</li>
+                </ul>
+                <p>
+                  In addition we are familiar with the building regulations and have experience in dealing with all authorized experts in the field of construction.
+                </p>
+              </div>
 
-            <div className="expertise-detail__table">
-              <h2 className="expertise-detail__table-title">Selected winning cases</h2>
-              <DataTable
-                data={cases}
-                columns={columns}
-                searchable
-                searchPlaceholder="Search cases..."
-                itemsPerPage={5}
-                showPagination
-                emptyMessage="No cases found"
-              />
+              <aside className="expertise-sidebar">
+                <div className="expertise-contact">
+                  <span className="expertise-contact__label">Practice contact</span>
+                  <a href="/team" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img
+                        src="/team/kresimir-sliepcevic.jpg"
+                        alt="Portrait of Krešimir Sliepčević"
+                        className="expertise-contact__image"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Krešimir Sliepčević</span>
+                      <span className="expertise-contact__role">Lawyer</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="expertise-practices">
+                  <span className="expertise-practices__label">Practices</span>
+                  <nav className="expertise-practices__nav" aria-label="Related practices">
+                    <a href="/expertise/public-procurement" className="expertise-practices__link">Public Procurement</a>
+                    <a href="/expertise/real-estate" className="expertise-practices__link expertise-practices__link--active">Real Estate & Land Registry</a>
+                    <a href="/expertise/labour-law" className="expertise-practices__link">Labour Law</a>
+                    <a href="/expertise/general-legal" className="expertise-practices__link">General Law</a>
+                  </nav>
+                </div>
+              </aside>
             </div>
           </div>
         </section>

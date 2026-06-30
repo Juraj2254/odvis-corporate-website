@@ -99,11 +99,10 @@ export default function Page() {
                 </svg>
               </button>
               <div className="header__expertise-menu" role="menu" aria-label="Opcije stručnosti">
-                <a href="/hr/strucnost/javna-nabava" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>nabava</a>
-                <a href="/hr/strucnost/nekretnine" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>nekretnine</a>
-                <a href="/hr/strucnost/radno-pravo" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>rad</a>
-                <a href="/hr/strucnost/opce-pravne-usluge" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>opće</a>
-                <a href="/hr/strucnost/dkom" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>DKOM</a>
+                <a href="/hr/strucnost/javna-nabava" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Javna nabava</a>
+                <a href="/hr/strucnost/nekretnine" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Nekretnine</a>
+                <a href="/hr/strucnost/radno-pravo" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Radno pravo</a>
+                <a href="/hr/strucnost/opce-pravne-usluge" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Opće pravo</a>
               </div>
             </div>
             <div

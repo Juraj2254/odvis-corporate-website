@@ -380,12 +380,12 @@ a {
 .header__expertise-menu {
   position: absolute;
   top: calc(100% + 0.6rem);
-  left: 50%;
-  min-width: 180px;
+  left: 0;
+  min-width: 220px;
   padding: 0.45rem 0.6rem;
   background-color: transparent;
   border: none;
-  transform: translate(-50%, -6px);
+  transform: translate(0, -6px);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -399,7 +399,7 @@ a {
   letter-spacing: 0.08em;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.82);
-  text-transform: lowercase;
+  text-transform: none;
   transition: color 0.2s ease;
 }
 
@@ -409,11 +409,11 @@ a {
 
 .header__expertise-option--active {
   color: #FFFFFF;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .header__expertise-dropdown--open .header__expertise-menu {
-  transform: translate(-50%, 0);
+  transform: translate(0, 0);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -962,6 +962,195 @@ a {
   font-weight: var(--font-regular);
   margin-bottom: var(--space-8);
   color: var(--color-foreground);
+}
+
+.expertise-detail__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .expertise-detail__layout {
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 360px);
+    gap: var(--space-24);
+  }
+}
+
+.expertise-lawyer {
+  position: sticky;
+  top: 100px;
+}
+
+.expertise-lawyer__card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+@media (min-width: 640px) {
+  .expertise-lawyer__card {
+    grid-template-columns: 140px 1fr;
+  }
+}
+
+.expertise-lawyer__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: var(--color-muted);
+}
+
+.expertise-lawyer__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expertise-lawyer__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.expertise-lawyer__role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted-foreground);
+}
+
+.expertise-lawyer__name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-medium);
+  line-height: 1.2;
+  color: var(--color-foreground);
+}
+
+.expertise-lawyer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-accent);
+  transition: color 0.2s ease;
+}
+
+.expertise-lawyer__link:hover {
+  color: var(--color-accent-hover);
+}
+
+.expertise-lawyer__link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.expertise-lawyer__link:hover svg {
+  transform: translateX(4px);
+}
+
+.expertise-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.expertise-contact__label,
+.expertise-practices__label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--space-4);
+}
+
+.expertise-contact__card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  transition: border-color 0.2s ease;
+}
+
+.expertise-contact__card:hover {
+  border-color: var(--color-foreground);
+}
+
+.expertise-contact__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--color-muted);
+}
+
+.expertise-contact__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expertise-contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.expertise-contact__name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-medium);
+  line-height: 1.3;
+  color: var(--color-foreground);
+}
+
+.expertise-contact__role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted-foreground);
+}
+
+.expertise-practices__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-practices__link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  color: var(--color-foreground);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s ease;
+}
+
+.expertise-practices__link:hover {
+  color: var(--color-accent);
+}
+
+.expertise-practices__link--active {
+  color: var(--color-accent);
 }
 
 /* ========================================

@@ -99,11 +99,10 @@ export default function Page() {
                 </svg>
               </button>
               <div className="header__expertise-menu" role="menu" aria-label="Expertise options">
-                <a href="/expertise/public-procurement" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>procurement</a>
-                <a href="/expertise/real-estate" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>real estate</a>
-                <a href="/expertise/labour-law" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>labour</a>
-                <a href="/expertise/general-legal" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>general</a>
-                <a href="/expertise/dkom" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>DKOM</a>
+                <a href="/expertise/public-procurement" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Public Procurement</a>
+                <a href="/expertise/real-estate" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Real Estate</a>
+                <a href="/expertise/labour-law" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Labor Law</a>
+                <a href="/expertise/general-legal" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>General Law</a>
               </div>
             </div>
             <div
