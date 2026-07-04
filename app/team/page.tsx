@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from "react"
 
 const teamMembers = [
-  { slug: 'member-01', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Attorney at Law', image: '/team/member-01.jpg' },
-  { slug: 'member-02', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Attorney at Law', image: '/team/member-02.jpg' },
-  { slug: 'member-03', firstName: 'Ana', lastName: 'Marić', role: 'Associate', image: '/team/member-03.jpg' },
-  { slug: 'member-04', firstName: 'Petra', lastName: 'Kovač', role: 'Legal Consultant', image: '/team/member-04.jpg' },
+  { slug: 'member-01', firstName: 'Nikolina', lastName: 'Šajnović', role: 'Associate', image: '/team/member-01.jpg' },
+  { slug: 'member-02', firstName: 'Matea', lastName: 'Kušević', role: 'Associate', image: '/team/member-02.jpg' },
+  { slug: 'member-03', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Attorney at Law', image: '/team/member-03.jpg' },
+  { slug: 'member-04', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Attorney at Law', image: '/team/member-04.jpg' },
 ]
 
 export default function TeamPage() {

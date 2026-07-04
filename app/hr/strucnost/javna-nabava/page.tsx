@@ -186,7 +186,7 @@ export default function PublicProcurementPage() {
       </header>
 
       <main>
-        <section className="expertise-detail">
+      <section className="expertise-detail">
           <div className="container">
             <div className="section-header">
               <div>
@@ -195,7 +195,8 @@ export default function PublicProcurementPage() {
               </div>
             </div>
 
-            <div className="expertise-detail__content">
+            <div className="expertise-detail__layout">
+              <div className="expertise-detail__content">
               <p>
                 Imamo bogato iskustvo u pružanju pravne podrške u postupcima javne nabave u
               </p>
@@ -211,6 +212,49 @@ export default function PublicProcurementPage() {
               <p>
                 Značajna područja u kojima pružamo usluge u području javne nabave su područje zaštite okoliša, šumarstva, planiranja i projektiranja cesta, kao i područje energetike.
               </p>
+              </div>
+
+              <aside className="expertise-sidebar">
+                <div className="expertise-contact">
+                  <span className="expertise-contact__label">Kontakti prakse</span>
+                  <a href="/hr/tim" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-03.jpg" alt="Marijan Vešligaj" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Marijan Vešligaj</span>
+                      <span className="expertise-contact__role">Odvjetnik</span>
+                    </div>
+                  </a>
+                  <a href="/hr/tim" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-01.jpg" alt="Nikolina Šajnović" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Nikolina Šajnović</span>
+                      <span className="expertise-contact__role">Odvjetnički pripravnik</span>
+                    </div>
+                  </a>
+                  <a href="/hr/tim" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-02.jpg" alt="Matea Kušević" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Matea Kušević</span>
+                      <span className="expertise-contact__role">Odvjetnički pripravnik</span>
+                    </div>
+                  </a>
+                </div>
+                <div className="expertise-practices">
+                  <span className="expertise-practices__label">Prakse</span>
+                  <nav className="expertise-practices__nav" aria-label="Povezane prakse">
+                    <a href="/hr/strucnost/javna-nabava" className="expertise-practices__link expertise-practices__link--active">Javna nabava</a>
+                    <a href="/hr/strucnost/nekretnine" className="expertise-practices__link">Nekretnine i zemljišne knjige</a>
+                    <a href="/hr/strucnost/radno-pravo" className="expertise-practices__link">Radno pravo</a>
+                    <a href="/hr/strucnost/opce-pravne-usluge" className="expertise-practices__link">Opće pravo</a>
+                  </nav>
+                </div>
+              </aside>
             </div>
 
             <div className="expertise-detail__table">
@@ -235,7 +279,7 @@ export default function PublicProcurementPage() {
             <div className="footer__brand">
               <img src="/logos/odvis-wordmark-light.svg" alt="ODVIS" className="footer__logo" />
               <p className="footer__tagline">
-                Odvjetnički ured Vešligaj i Sliepčević. Specijalizirana pravna podrška za poduzeća i građane od 2016.
+                Odvjetnički ured Vešligaj i Sliepčević. Specijalizirana pravna podrška za poduzeća i građane od 03.05.2016.
               </p>
             </div>
 

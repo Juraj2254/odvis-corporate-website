@@ -17,11 +17,11 @@ export default function LegalNoticePage() {
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>1. Identity of the Law Firm</h2>
         <p style={{ marginBottom: "var(--space-6)" }}>
-          Name: ODVIS — Odvjetnički ured Vešligaj i Sliepčević<br />
-          Address: Ulica Franje Lučića 9, 8th floor, 10 000 Zagreb, Croatia<br />
-          Telephone: +385 1 6423 963<br />
+          Name: Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d.<br />
+          Address: Froudeova ulica 9, 10000 Zagreb, Croatia<br />
+          Telephone: 016521072<br />
           Email: office@odvis.hr<br />
-          Founded: 2016
+          Founded: 03.05.2016.
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>2. Professional Regulation</h2>
         <p style={{ marginBottom: "var(--space-6)" }}>

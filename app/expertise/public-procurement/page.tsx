@@ -195,22 +195,66 @@ export default function PublicProcurementPage() {
               </div>
             </div>
 
-            <div className="expertise-detail__content">
-              <p>
-                We have rich experience in providing legal support in public procurement procedures of
-              </p>
-              <ul>
-                <li>preparation and submission of bids,</li>
-                <li>appeals to the documentation and the client&apos;s decision,</li>
-                <li>representation in administrative disputes relating to decisions of the State Commission</li>
-                <li>consultation in the process of contracting</li>
-              </ul>
-              <p>
-                In addition the company has significant experience in representing clients in court and arbitration proceedings led on the occasion of disputes arising out of public contracts.
-              </p>
-              <p>
-                Significant areas in which we provide services in the field of public procurement as an area of environmental protection, forestry, planning and design of roads, as well as in the field of energy.
-              </p>
+            <div className="expertise-detail__layout">
+              <div className="expertise-detail__content">
+                <p>
+                  We have rich experience in providing legal support in public procurement procedures of
+                </p>
+                <ul>
+                  <li>preparation and submission of bids,</li>
+                  <li>appeals to the documentation and the client&apos;s decision,</li>
+                  <li>representation in administrative disputes relating to decisions of the State Commission</li>
+                  <li>consultation in the process of contracting</li>
+                </ul>
+                <p>
+                  In addition the company has significant experience in representing clients in court and arbitration proceedings led on the occasion of disputes arising out of public contracts.
+                </p>
+                <p>
+                  Significant areas in which we provide services in the field of public procurement as an area of environmental protection, forestry, planning and design of roads, as well as in the field of energy.
+                </p>
+              </div>
+
+              <aside className="expertise-sidebar">
+                <div className="expertise-contact">
+                  <span className="expertise-contact__label">Practice contacts</span>
+                  <a href="/team" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-03.jpg" alt="Marijan Vešligaj" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Marijan Vešligaj</span>
+                      <span className="expertise-contact__role">Attorney at Law</span>
+                    </div>
+                  </a>
+                  <a href="/team" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-01.jpg" alt="Nikolina Šajnović" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Nikolina Šajnović</span>
+                      <span className="expertise-contact__role">Associate</span>
+                    </div>
+                  </a>
+                  <a href="/team" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-02.jpg" alt="Matea Kušević" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Matea Kušević</span>
+                      <span className="expertise-contact__role">Associate</span>
+                    </div>
+                  </a>
+                </div>
+                <div className="expertise-practices">
+                  <span className="expertise-practices__label">Practices</span>
+                  <nav className="expertise-practices__nav" aria-label="Related practices">
+                    <a href="/expertise/public-procurement" className="expertise-practices__link expertise-practices__link--active">Public Procurement</a>
+                    <a href="/expertise/real-estate" className="expertise-practices__link">Real Estate & Land Registry</a>
+                    <a href="/expertise/labour-law" className="expertise-practices__link">Labour Law</a>
+                    <a href="/expertise/general-legal" className="expertise-practices__link">General Law</a>
+                  </nav>
+                </div>
+              </aside>
             </div>
 
             <div className="expertise-detail__table">
@@ -235,7 +279,7 @@ export default function PublicProcurementPage() {
             <div className="footer__brand">
               <img src="/logos/odvis-wordmark-light.svg" alt="ODVIS" className="footer__logo" />
               <p className="footer__tagline">
-                Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 2016.
+                    Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 03.05.2016.
               </p>
             </div>
 

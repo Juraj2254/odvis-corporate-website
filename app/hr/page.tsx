@@ -260,14 +260,14 @@ export default function Page() {
                 <h2 className="section-title">Odvjetnički ured Vešligaj<br />i Sliepčević</h2>
               </div>
               <p className="section-description">
-                Osnovan 2016. s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane.
+                Osnovan 03.05.2016. s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane.
               </p>
             </div>
 
             <div className="about__content">
               <div className="about__text">
                 <p>
-                  Odvjetnički ured Vešligaj i Sliepčević osnovan je 2016. godine s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane. S dugogodišnjim iskustvom u privatnom sektoru, organiziramo sveobuhvatnu, individualno prilagođenu pravnu podršku, s posebnim fokusom na mala i srednja poduzeća.
+                  Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d. osnovano je 03.05.2016. s ciljem pružanja visokokvalitetnih pravnih usluga za poduzeća i građane. S dugogodišnjim iskustvom u privatnom sektoru, organiziramo sveobuhvatnu, individualno prilagođenu pravnu podršku, s posebnim fokusom na mala i srednja poduzeća.
                 </p>
                 <p>
                   Naša praksa počiva na jednostavnom uvjerenju: najbolji ishod je onaj postignut bez nepotrebnog sukoba. Savjetujemo prije nastanka sporova, zastupamo s preciznošću kada do njih dođe, i svaku stvar tretiramo s istim standardom pažnje, bez obzira na njezinu veličinu.
@@ -410,15 +410,15 @@ export default function Page() {
                 <div className="contact__block">
                   <span className="contact__block-label">Telefon</span>
                   <div className="contact__block-value">
-                    <a href="tel:+38516423963">+385 1 6423 963</a>
+                    <a href="tel:016521072">016521072</a>
                   </div>
                 </div>
 
                 <div className="contact__block">
                   <span className="contact__block-label">Adresa</span>
                   <div className="contact__block-value">
-                    Ulica Franje Lučića 9, VIII. kat<br />
-                    Novi Zagreb – Siget, 10 000 Zagreb
+                    Froudeova ulica 9<br />
+                    10000 Zagreb
                   </div>
                   <p className="contact__directions">
                     Tramvajske linije 7 i 14 (stanica Velesajam). Parkiranje u Lučićevoj i okolnim ulicama (zona 2). Taksi stanica u Lučićevoj ulici.

@@ -13,11 +13,11 @@ export default function PrivacyPage() {
       </div>
       <div style={{ maxWidth: "780px", fontSize: "var(--font-size-lg)", lineHeight: 1.8, color: "var(--color-foreground)" }}>
         <p style={{ marginBottom: "var(--space-6)" }}>
-          This Privacy Policy explains how ODVIS — Law Firm Vešligaj and Sliepčević collects, uses, stores, and protects your personal data when you use our website and services.
+          This Privacy Policy explains how Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d. collects, uses, stores, and protects your personal data when you use our website and services.
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>1. Data Controller</h2>
         <p style={{ marginBottom: "var(--space-6)" }}>
-          The data controller is ODVIS — Odvjetnički ured Vešligaj i Sliepčević, Ulica Franje Lučića 9, 10 000 Zagreb, Croatia. You can contact us at office@odvis.hr.
+          The data controller is Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d., Froudeova ulica 9, 10000 Zagreb, Croatia. You can contact us at office@odvis.hr.
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>2. What Data We Collect</h2>
         <p style={{ marginBottom: "var(--space-3)" }}>We may collect the following categories of personal data:</p>

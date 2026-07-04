@@ -264,14 +264,14 @@ export default function Page() {
                 <h2 className="section-title">Law Firm Vešligaj<br />and Sliepčević</h2>
               </div>
               <p className="section-description">
-                Founded in 2016 with the goal of delivering high-quality legal services to businesses and individuals.
+                Founded on 3 May 2016 with the goal of delivering high-quality legal services to businesses and individuals.
               </p>
             </div>
 
             <div className="about__content">
               <div className="about__text">
                 <p>
-                  Law Firm Vešligaj and Sliepčević was founded in 2016 with the goal of delivering high-quality legal services to businesses and individuals. With many years of experience in the private sector, we provide comprehensive legal support tailored to each client, with a particular focus on small and medium-sized enterprises.
+                  Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d. was founded on 3 May 2016 with the goal of delivering high-quality legal services to businesses and individuals. With many years of experience in the private sector, we provide comprehensive legal support tailored to each client, with a particular focus on small and medium-sized enterprises.
                 </p>
                 <p>
                   Our practice is built on a simple conviction: the best outcome is one reached without unnecessary conflict. We advise before disputes arise, represent with precision when they do, and bring the same standard of care to every matter, regardless of size.
@@ -414,15 +414,15 @@ export default function Page() {
                 <div className="contact__block">
                   <span className="contact__block-label">Phone</span>
                   <div className="contact__block-value">
-                    <a href="tel:+38516423963">+385 1 6423 963</a>
+                    <a href="tel:016521072">016521072</a>
                   </div>
                 </div>
 
                 <div className="contact__block">
                   <span className="contact__block-label">Address</span>
                   <div className="contact__block-value">
-                    Ulica Franje Lučića 9, 8th floor<br />
-                    New Zagreb – Siget, 10 000 Zagreb, Croatia
+                    Froudeova ulica 9<br />
+                    10000 Zagreb, Croatia
                   </div>
                   <p className="contact__directions">
                     Tram lines 7 and 14 (Velesajam stop). Parking available in Lučićeva and surrounding streets (zone 2). Taxi stand on Lučićeva street.

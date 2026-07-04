@@ -199,7 +199,7 @@ export default function RealEstatePage() {
                   <a href="/team" className="expertise-contact__card">
                     <div className="expertise-contact__media">
                       <img
-                        src="/team/kresimir-sliepcevic.jpg"
+                        src="/team/member-04.jpg"
                         alt="Portrait of Krešimir Sliepčević"
                         className="expertise-contact__image"
                         loading="lazy"

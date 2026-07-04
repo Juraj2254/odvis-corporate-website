@@ -100,7 +100,7 @@ export default function GeneralLegalPage() {
                   <span className="expertise-contact__label">Practice contact</span>
                   <a href="/team" className="expertise-contact__card">
                     <div className="expertise-contact__media">
-                      <img src="/team/member-02.jpg" alt="Krešimir Sliepčević" className="expertise-contact__image" loading="lazy" />
+                      <img src="/team/member-04.jpg" alt="Krešimir Sliepčević" className="expertise-contact__image" loading="lazy" />
                     </div>
                     <div className="expertise-contact__info">
                       <span className="expertise-contact__name">Krešimir Sliepčević</span>
