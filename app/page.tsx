@@ -2,6 +2,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import ContactForm from "@/components/contact-form"
 import useScrollReveal from "@/lib/use-scroll-reveal"
 
@@ -172,8 +173,17 @@ export default function Page() {
       </header>
 
       <main>
-        {/* HERO */}
+      {/* HERO */}
         <section className="hero reveal">
+          <div className="hero__bg">
+            <Image
+              src="/images/hero.jpg"
+              alt="Modern architecture"
+              fill
+              className="hero__bg-img"
+              priority
+            />
+          </div>
           <div className="container hero__inner">
             <h1 className="hero__title">
               The law is full of edges.<br />

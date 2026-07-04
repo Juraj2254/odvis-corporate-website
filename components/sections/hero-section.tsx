@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function HeroSection() {
   return (
@@ -42,23 +43,16 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Stats / Visual */}
+          {/* Hero Image */}
           <div className="lg:col-span-5">
-            <div className="border border-border p-8 lg:p-12">
-              <div className="space-y-8">
-                <div className="border-b border-border pb-8">
-                  <span className="text-hero text-5xl lg:text-6xl text-foreground">25+</span>
-                  <p className="text-legal text-sm text-muted-foreground mt-2">Lorem ipsum dolor</p>
-                </div>
-                <div className="border-b border-border pb-8">
-                  <span className="text-hero text-5xl lg:text-6xl text-foreground">500+</span>
-                  <p className="text-legal text-sm text-muted-foreground mt-2">Consectetur adipiscing</p>
-                </div>
-                <div>
-                  <span className="text-hero text-5xl lg:text-6xl text-accent">98%</span>
-                  <p className="text-legal text-sm text-muted-foreground mt-2">Sed do eiusmod</p>
-                </div>
-              </div>
+            <div className="relative w-full aspect-[3/2]">
+              <Image
+                src="/images/hero-desktop.png"
+                alt="Modern architecture"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

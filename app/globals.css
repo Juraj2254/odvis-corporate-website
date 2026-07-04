@@ -587,13 +587,38 @@ a {
    HERO SECTION
    ======================================== */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: var(--color-foreground);
   color: #FFFFFF;
   border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero__inner {
@@ -609,6 +634,7 @@ a {
   letter-spacing: 0.15em;
   color: rgba(255, 255, 255, 0.7);
 }
+
 
 .hero__title {
   font-size: 28px;
