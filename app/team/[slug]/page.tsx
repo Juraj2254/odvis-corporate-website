@@ -1,0 +1,131 @@
+"use client"
+
+import { useState, useEffect, useRef } from "react"
+
+const teamMembers = [
+  { slug: "member-01", firstName: "Marijan", lastName: "Vešligaj", role: "Attorney at Law", image: "/team/member-01.jpg", bio: "Marijan Vešligaj founded the firm in 2016 after more than a decade of practice in the private sector. He specialises in public procurement law and has represented clients in over 200 DKOM proceedings. He is a certified public procurement specialist and authorised mediator." },
+  { slug: "member-02", firstName: "Krešimir", lastName: "Sliepčević", role: "Attorney at Law", image: "/team/member-02.jpg", bio: "Krešimir Sliepčević leads the firm's real estate and corporate practice. With extensive experience in land registry procedures, commercial contracts, and due diligence, he advises clients on complex property transactions and corporate restructuring." },
+  { slug: "member-03", firstName: "Ana", lastName: "Marić", role: "Associate", image: "/team/member-03.jpg", bio: "Ana Marić is an associate specialising in labour law, administrative procedures, and general legal support. She advises both employers and employees on employment relationships, contract drafting, and labour dispute resolution." },
+  { slug: "member-04", firstName: "Petra", lastName: "Kovač", role: "Legal Consultant", image: "/team/member-04.jpg", bio: "Petra Kovač provides research and analytical support across all practice areas. Her expertise includes legal research, case preparation, and the analysis of tender documentation and public procurement procedures." },
+]
+
+export default function TeamMemberPage({ params }: { params: { slug: string } }) {
+  const member = teamMembers.find((m) => m.slug === params.slug)
+
+  const [firmOpen, setFirmOpen] = useState(false)
+  const [expertiseOpen, setExpertiseOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const firmRef = useRef<HTMLDivElement>(null)
+  const expertiseRef = useRef<HTMLDivElement>(null)
+  const langRef = useRef<HTMLDivElement>(null)
+  const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (firmRef.current && !firmRef.current.contains(event.target as Node)) setFirmOpen(false)
+      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) setExpertiseOpen(false)
+      if (langRef.current && !langRef.current.contains(event.target as Node)) setLangOpen(false)
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const openFirm = () => { if (firmTimer.current) clearTimeout(firmTimer.current); setFirmOpen(true) }
+  const closeFirm = () => { firmTimer.current = setTimeout(() => setFirmOpen(false), 200) }
+  const openExpertise = () => { if (expertiseTimer.current) clearTimeout(expertiseTimer.current); setExpertiseOpen(true) }
+  const closeExpertise = () => { expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200) }
+  const toggleLang = () => setLangOpen((prev) => !prev)
+
+  if (!member) return <div className="container" style={{ paddingTop: "120px" }}>Member not found.</div>
+
+  return (
+    <>
+      <header className="header header--light">
+        <div className="container header__inner">
+          <a href="/" aria-label="ODVIS Home">
+            <img src="/logos/odvis-wordmark-dark.svg" alt="ODVIS" className="header__logo" />
+          </a>
+          <nav className="header__nav" aria-label="Main navigation">
+            <a href="/#services" className="header__nav-link header__nav-link--dark">Services</a>
+            <div ref={expertiseRef} className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`} onMouseEnter={openExpertise} onMouseLeave={closeExpertise}>
+              <button className="header__expertise-trigger header__expertise-trigger--dark" onClick={() => setExpertiseOpen((p) => !p)}>
+                <span className="header__expertise-trigger-text">Expertise</span>
+                <svg className="header__expertise-arrow" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5"/></svg>
+              </button>
+              <div className="header__expertise-menu" role="menu">
+                <a href="/expertise/public-procurement" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Public Procurement</a>
+                <a href="/expertise/real-estate" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Real Estate</a>
+                <a href="/expertise/labour-law" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Labor Law</a>
+                <a href="/expertise/general-legal" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>General Law</a>
+              </div>
+            </div>
+            <div ref={firmRef} className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`} onMouseEnter={openFirm} onMouseLeave={closeFirm}>
+              <button className="header__firm-trigger header__firm-trigger--dark" onClick={() => setFirmOpen((p) => !p)}>
+                <span className="header__firm-trigger-text">The Firm</span>
+                <svg className="header__firm-arrow" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5"/></svg>
+              </button>
+              <div className="header__firm-menu" role="menu">
+                <a href="/#about" className="header__firm-option" onClick={() => setFirmOpen(false)}>about</a>
+                <a href="/team" className="header__firm-option" onClick={() => setFirmOpen(false)}>team</a>
+                <a href="/#contact" className="header__firm-option" onClick={() => setFirmOpen(false)}>contact</a>
+              </div>
+            </div>
+          </nav>
+          <div className="header__contact">
+            <div className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}>
+              <button className="header__lang-trigger" onClick={toggleLang}><span className="header__lang-current">EN</span></button>
+              <div className="header__lang-menu" role="menu">
+                <span className="header__lang-option header__lang-option--active">EN</span>
+                <a href="/hr" className="header__lang-option" onClick={() => setLangOpen(false)}>hr</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section className="team-page" style={{ paddingTop: "120px" }}>
+          <div className="container">
+            <div className="team-page__grid" style={{ gridTemplateColumns: "1fr 2fr", gap: "4rem" }}>
+              <div>
+                <div style={{ position: "relative", width: "100%", aspectRatio: "600 / 800", backgroundColor: "var(--color-border)", overflow: "hidden" }}>
+                  <img src={member.image} alt={`Portrait of ${member.firstName} ${member.lastName}`} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
+                </div>
+              </div>
+              <div>
+                <h1 style={{ fontSize: "var(--font-size-5xl)", fontWeight: "var(--font-regular)", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "var(--space-6)" }}>
+                  {member.firstName}<br />{member.lastName}
+                </h1>
+                <span style={{ fontSize: "var(--font-size-xs)", fontWeight: "var(--font-light)", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--color-muted-foreground)", display: "block", marginBottom: "var(--space-12)" }}>{member.role}</span>
+                <p style={{ fontSize: "var(--font-size-lg)", lineHeight: 1.8, maxWidth: "640px" }}>{member.bio}</p>
+                <div style={{ marginTop: "var(--space-12)" }}>
+                  <a href="/team" className="service-card__link">
+                    Back to team
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <div className="footer__inner">
+            <div className="footer__brand">
+              <img src="/logos/odvis-wordmark-light.svg" alt="ODVIS" className="footer__logo" />
+              <p className="footer__tagline">Law Firm Vešligaj and Sliepčević. Specialised legal support for businesses and individuals since 2016.</p>
+            </div>
+            <div className="footer__column"><h4 className="footer__column-title">Services</h4></div>
+            <div className="footer__column"><h4 className="footer__column-title">Expertise</h4></div>
+            <div className="footer__column"><h4 className="footer__column-title">The Firm</h4></div>
+          </div>
+          <div className="footer__bottom"><p className="footer__copyright">© 2025 ODVIS. All rights reserved.</p></div>
+        </div>
+      </footer>
+    </>
+  )
+}

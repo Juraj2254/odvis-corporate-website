@@ -2,6 +2,8 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import ContactForm from "@/components/contact-form"
+import useScrollReveal from "@/lib/use-scroll-reveal"
 
 export default function Page() {
   const [firmOpen, setFirmOpen] = useState(false)
@@ -13,6 +15,8 @@ export default function Page() {
   const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useScrollReveal()
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -169,7 +173,7 @@ export default function Page() {
 
       <main>
         {/* HERO */}
-        <section className="hero">
+        <section className="hero reveal">
           <div className="container hero__inner">
             <h1 className="hero__title">
               The law is full of edges.<br />
@@ -179,7 +183,7 @@ export default function Page() {
         </section>
 
         {/* SERVICES */}
-        <section className="services" id="services">
+        <section className="services reveal" id="services">
           <div className="container">
             <div className="section-header">
               <div>
@@ -252,7 +256,7 @@ export default function Page() {
         </section>
 
         {/* ABOUT */}
-        <section className="about" id="about">
+        <section className="about reveal" id="about">
           <div className="container">
             <div className="section-header">
               <div>
@@ -305,7 +309,7 @@ export default function Page() {
         </section>
 
         {/* EXPERTISE */}
-        <section className="expertise" id="expertise">
+        <section className="expertise reveal" id="expertise">
           <div className="container">
             <div className="section-header">
               <div>
@@ -386,7 +390,7 @@ export default function Page() {
         </section>
 
         {/* CONTACT */}
-        <section className="contact" id="contact">
+        <section className="contact reveal" id="contact">
           <div className="container">
             <div className="section-header">
               <div>
@@ -426,24 +430,7 @@ export default function Page() {
                 </div>
               </div>
 
-              <form className="contact__form">
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input type="text" id="name" name="name" className="form-input" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" id="email" name="email" className="form-input" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea id="message" name="message" className="form-textarea" required></textarea>
-                </div>
-
-                <button type="submit" className="form-submit">Send message</button>
-              </form>
+              <ContactForm locale="en" />
             </div>
           </div>
         </section>
