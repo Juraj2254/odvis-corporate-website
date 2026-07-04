@@ -20,7 +20,7 @@ export default function LegalNoticePage() {
           Name: Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d.<br />
           Address: Froudeova ulica 9, 10000 Zagreb, Croatia<br />
           Telephone: 016521072<br />
-          Email: office@odvis.hr<br />
+          Email: info@odvis.hr<br />
           Founded: 03.05.2016.
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>2. Professional Regulation</h2>

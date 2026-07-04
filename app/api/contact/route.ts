@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     // Example integration:
     // await resend.emails.send({
     //   from: 'website@odvis.hr',
-    //   to: ['office@odvis.hr'],
+      //   to: ['info@odvis.hr'],
     //   subject: `New contact from ${body.name}`,
     //   text: `From: ${body.name} \u003c${body.email}\u003e\n\n${body.message}`,
     // })

@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>1. Data Controller</h2>
         <p style={{ marginBottom: "var(--space-6)" }}>
-          The data controller is Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d., Froudeova ulica 9, 10000 Zagreb, Croatia. You can contact us at office@odvis.hr.
+          The data controller is Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d., Froudeova ulica 9, 10000 Zagreb, Croatia. You can contact us at info@odvis.hr.
         </p>
         <h2 style={{ fontSize: "var(--font-size-2xl)", marginBottom: "var(--space-4)", marginTop: "var(--space-12)" }}>2. What Data We Collect</h2>
         <p style={{ marginBottom: "var(--space-3)" }}>We may collect the following categories of personal data:</p>

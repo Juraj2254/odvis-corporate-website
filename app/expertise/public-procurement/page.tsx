@@ -175,7 +175,7 @@ export default function PublicProcurementPage() {
                 <a href="/hr/strucnost/javna-nabava" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
               </div>
             </div>
-            <button className="header__cta">Get in Touch</button>
+            <a href="/#contact" className="header__cta">Get in Touch</a>
             <button className="header__menu-btn" aria-label="Open menu">
               <span></span>
               <span></span>

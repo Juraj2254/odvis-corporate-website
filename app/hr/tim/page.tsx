@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from "react"
 
 const teamMembers = [
-  { slug: 'member-01', firstName: 'Nikolina', lastName: 'Šajnović', role: 'Odvjetnički pripravnik', image: '/team/member-01.jpg' },
-  { slug: 'member-02', firstName: 'Matea', lastName: 'Kušević', role: 'Odvjetnički pripravnik', image: '/team/member-02.jpg' },
   { slug: 'member-03', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Odvjetnik', image: '/team/member-03.jpg' },
   { slug: 'member-04', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Odvjetnik', image: '/team/member-04.jpg' },
+  { slug: 'member-01', firstName: 'Nikolina', lastName: 'Šajnović', role: 'Odvjetnički pripravnik', image: '/team/member-01.jpg' },
+  { slug: 'member-02', firstName: 'Matea', lastName: 'Kušević', role: 'Odvjetnički pripravnik', image: '/team/member-02.jpg' },
 ]
 
 export default function TeamPage() {
@@ -122,7 +122,7 @@ export default function TeamPage() {
                 <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
               </div>
             </div>
-            <button className="header__cta">KONTAKT</button>
+            <a href="/hr#kontakt" className="header__cta">KONTAKT</a>
             <button className="header__menu-btn" aria-label="Otvori izbornik">
               <span></span>
               <span></span>

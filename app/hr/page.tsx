@@ -157,7 +157,7 @@ export default function Page() {
                 <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
               </div>
             </div>
-            <button className="header__cta">KONTAKT</button>
+            <a href="/hr#kontakt" className="header__cta">KONTAKT</a>
             <button className="header__menu-btn" aria-label="Otvori izbornik">
               <span></span>
               <span></span>
@@ -403,7 +403,7 @@ export default function Page() {
                 <div className="contact__block">
                   <span className="contact__block-label">E-mail</span>
                   <div className="contact__block-value">
-                    <a href="mailto:office@odvis.hr">office@odvis.hr</a>
+                    <a href="mailto:info@odvis.hr">info@odvis.hr</a>
                   </div>
                 </div>
 
@@ -420,9 +420,6 @@ export default function Page() {
                     Froudeova ulica 9<br />
                     10000 Zagreb
                   </div>
-                  <p className="contact__directions">
-                    Tramvajske linije 7 i 14 (stanica Velesajam). Parkiranje u Lučićevoj i okolnim ulicama (zona 2). Taksi stanica u Lučićevoj ulici.
-                  </p>
                 </div>
               </div>
 

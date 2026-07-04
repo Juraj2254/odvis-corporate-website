@@ -175,7 +175,7 @@ export default function PublicProcurementPage() {
                 <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
               </div>
             </div>
-            <button className="header__cta">KONTAKT</button>
+            <a href="/hr#kontakt" className="header__cta">KONTAKT</a>
             <button className="header__menu-btn" aria-label="Otvori izbornik">
               <span></span>
               <span></span>

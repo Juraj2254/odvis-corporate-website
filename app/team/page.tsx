@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from "react"
 
 const teamMembers = [
-  { slug: 'member-01', firstName: 'Nikolina', lastName: 'Šajnović', role: 'Associate', image: '/team/member-01.jpg' },
-  { slug: 'member-02', firstName: 'Matea', lastName: 'Kušević', role: 'Associate', image: '/team/member-02.jpg' },
   { slug: 'member-03', firstName: 'Marijan', lastName: 'Vešligaj', role: 'Attorney at Law', image: '/team/member-03.jpg' },
   { slug: 'member-04', firstName: 'Krešimir', lastName: 'Sliepčević', role: 'Attorney at Law', image: '/team/member-04.jpg' },
+  { slug: 'member-01', firstName: 'Nikolina', lastName: 'Šajnović', role: 'Associate', image: '/team/member-01.jpg' },
+  { slug: 'member-02', firstName: 'Matea', lastName: 'Kušević', role: 'Associate', image: '/team/member-02.jpg' },
 ]
 
 export default function TeamPage() {
@@ -163,7 +163,7 @@ export default function TeamPage() {
                 <a href="/hr/tim" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>hr</a>
               </div>
             </div>
-            <button className="header__cta">Get in Touch</button>
+            <a href="/#contact" className="header__cta">Get in Touch</a>
             <button className="header__menu-btn" aria-label="Open menu">
               <span></span>
               <span></span>

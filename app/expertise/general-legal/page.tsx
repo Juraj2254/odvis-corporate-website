@@ -97,13 +97,22 @@ export default function GeneralLegalPage() {
               </div>
               <aside className="expertise-sidebar">
                 <div className="expertise-contact">
-                  <span className="expertise-contact__label">Practice contact</span>
+                  <span className="expertise-contact__label">Practice contacts</span>
                   <a href="/team" className="expertise-contact__card">
                     <div className="expertise-contact__media">
                       <img src="/team/member-04.jpg" alt="Krešimir Sliepčević" className="expertise-contact__image" loading="lazy" />
                     </div>
                     <div className="expertise-contact__info">
                       <span className="expertise-contact__name">Krešimir Sliepčević</span>
+                      <span className="expertise-contact__role">Attorney at Law</span>
+                    </div>
+                  </a>
+                  <a href="/team" className="expertise-contact__card">
+                    <div className="expertise-contact__media">
+                      <img src="/team/member-03.jpg" alt="Marijan Vešligaj" className="expertise-contact__image" loading="lazy" />
+                    </div>
+                    <div className="expertise-contact__info">
+                      <span className="expertise-contact__name">Marijan Vešligaj</span>
                       <span className="expertise-contact__role">Attorney at Law</span>
                     </div>
                   </a>
