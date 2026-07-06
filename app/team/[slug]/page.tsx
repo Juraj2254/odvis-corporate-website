@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { EnHeader } from "@/components/layout/en-header"
 
 const teamMembers = [
   { slug: "member-03", firstName: "Marijan", lastName: "Vešligaj", role: "Attorney at Law", image: "/team/member-03.jpg", bio: "Marijan Vešligaj founded the firm in 2016 after more than a decade of practice in the private sector. He specialises in public procurement law and has represented clients in over 200 DKOM proceedings. He is a certified public procurement specialist and authorised mediator." },
@@ -13,78 +13,11 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const member = teamMembers.find((m) => m.slug === slug)
 
-  const [firmOpen, setFirmOpen] = useState(false)
-  const [expertiseOpen, setExpertiseOpen] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
-  const firmRef = useRef<HTMLDivElement>(null)
-  const expertiseRef = useRef<HTMLDivElement>(null)
-  const langRef = useRef<HTMLDivElement>(null)
-  const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (firmRef.current && !firmRef.current.contains(event.target as Node)) setFirmOpen(false)
-      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) setExpertiseOpen(false)
-      if (langRef.current && !langRef.current.contains(event.target as Node)) setLangOpen(false)
-    }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [])
-
-  const openFirm = () => { if (firmTimer.current) clearTimeout(firmTimer.current); setFirmOpen(true) }
-  const closeFirm = () => { firmTimer.current = setTimeout(() => setFirmOpen(false), 200) }
-  const openExpertise = () => { if (expertiseTimer.current) clearTimeout(expertiseTimer.current); setExpertiseOpen(true) }
-  const closeExpertise = () => { expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200) }
-  const toggleLang = () => setLangOpen((prev) => !prev)
-
   if (!member) return <div className="container" style={{ paddingTop: "120px" }}>Member not found.</div>
 
   return (
     <>
-      <header className="header header--light">
-        <div className="container header__inner">
-          <a href="/" aria-label="ODVIS Home">
-            <img src="/logos/odvis-wordmark-dark.svg" alt="ODVIS" className="header__logo" />
-          </a>
-          <nav className="header__nav" aria-label="Main navigation">
-            <a href="/#services" className="header__nav-link header__nav-link--dark">Services</a>
-            <div ref={expertiseRef} className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`} onMouseEnter={openExpertise} onMouseLeave={closeExpertise}>
-              <button className="header__expertise-trigger header__expertise-trigger--dark" onClick={() => setExpertiseOpen((p) => !p)}>
-                <span className="header__expertise-trigger-text">Expertise</span>
-                <svg className="header__expertise-arrow" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5"/></svg>
-              </button>
-              <div className="header__expertise-menu" role="menu">
-                <a href="/expertise/public-procurement" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Public Procurement</a>
-                <a href="/expertise/real-estate" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Real Estate</a>
-                <a href="/expertise/labour-law" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>Labor Law</a>
-                <a href="/expertise/general-legal" className="header__expertise-option" onClick={() => setExpertiseOpen(false)}>General Law</a>
-              </div>
-            </div>
-            <div ref={firmRef} className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`} onMouseEnter={openFirm} onMouseLeave={closeFirm}>
-              <button className="header__firm-trigger header__firm-trigger--dark" onClick={() => setFirmOpen((p) => !p)}>
-                <span className="header__firm-trigger-text">The Firm</span>
-                <svg className="header__firm-arrow" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5"/></svg>
-              </button>
-              <div className="header__firm-menu" role="menu">
-                <a href="/#about" className="header__firm-option" onClick={() => setFirmOpen(false)}>about</a>
-                <a href="/team" className="header__firm-option" onClick={() => setFirmOpen(false)}>team</a>
-                <a href="/#contact" className="header__firm-option" onClick={() => setFirmOpen(false)}>contact</a>
-              </div>
-            </div>
-          </nav>
-          <div className="header__contact">
-            <div className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}>
-              <button className="header__lang-trigger" onClick={toggleLang}><span className="header__lang-current">EN</span></button>
-              <div className="header__lang-menu" role="menu">
-                <span className="header__lang-option header__lang-option--active">EN</span>
-                <a href="/hr" className="header__lang-option" onClick={() => setLangOpen(false)}>hr</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <EnHeader activeFirm="team" altHref="/hr/tim" />
 
       <main>
         <section className="team-page" style={{ paddingTop: "120px" }}>
@@ -124,7 +57,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
             <div className="footer__column"><h4 className="footer__column-title">Expertise</h4></div>
             <div className="footer__column"><h4 className="footer__column-title">The Firm</h4></div>
           </div>
-          <div className="footer__bottom"><p className="footer__copyright">© 2025 ODVIS. All rights reserved.</p></div>
+          <div className="footer__bottom"><p className="footer__copyright">© 2026 ODVIS. All rights reserved.</p></div>
         </div>
       </footer>
     </>

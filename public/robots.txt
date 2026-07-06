@@ -1,0 +1,16 @@
+# robots.txt — ODVIS Law Firm
+# https://odvis.hr
+
+User-agent: *
+Allow: /
+
+# Prevent indexing of API routes and form endpoints
+Disallow: /api/
+Disallow: /*.pdf$
+Disallow: /*?*
+
+# Crawl rate suggestion (optional, respectful to servers)
+Crawl-delay: 1
+
+# Sitemap reference
+Sitemap: https://odvis.hr/sitemap.xml

@@ -1,0 +1,109 @@
+# llms.txt — ODVIS (Odvjetnički ured Vešligaj i Sliepčević)
+# A structured overview of https://odvis.hr for AI systems and crawlers.
+# Generated: 2026-07-06
+# Language support: English (en) and Croatian (hr)
+
+## Overview
+
+ODVIS — Odvjetnički ured Vešligaj i Sliepčević (Law Firm Vešligaj and Sliepčević) is a Croatian law firm founded on 3 May 2016 with headquarters at Froudeova ulica 9, 10000 Zagreb, Croatia. It provides specialised legal support for businesses and individuals, with particular emphasis on small and medium-sized enterprises. The firm operates a bilingual website in English and Croatian.
+
+- Site: https://odvis.hr
+- Email: info@odvis.hr
+- Phone: 016521072
+- Legal form: Javno trgovačko društvo Odvjetničko društvo Vešligaj i Sliepčević j.t.d.
+- Year founded: 2016
+- Bar association: Croatian Bar Association (HOK)
+
+## Site Structure
+
+### English Pages (en)
+- `/` — Homepage (Hero, Services, About, DKOM Practice, Contact, Footer)
+- `/expertise/public-procurement` — Public Procurement expertise and winning cases table
+- `/expertise/real-estate` — Real Estate & Land Registry Law
+- `/expertise/labour-law` — Labour Law & Employment Contracts
+- `/expertise/general-legal` — General Legal Support
+- `/team` — Team page (Marijan Vešligaj, Krešimir Sliepčević, Nikolina Šajnović, Matea Kušević)
+- `/legal-notice` — Legal Notice / Disclaimer
+- `/privacy` — Privacy Policy
+
+### Croatian Pages (hr)
+- `/hr` — Početna stranica (services, about, DKOM practice, contact)
+- `/hr/strucnost/javna-nabava` — Javna nabava (javna nabava, javnobupno)
+- `/hr/strucnost/nekretnine` — Nekretnine i zemljišne knjige
+- `/hr/strucnost/radno-pravo` — Radno pravo i ugovori o radu
+- `/hr/strucnost/opce-pravne-usluge` — Opće pravne usluge
+- `/hr/tim` — Tim stranica
+
+### Dynamic Routes
+- `/team/[slug]` — Individual team member detail page (English)
+- `/hr/tim/[slug]` — Individual team member detail page (Croatian)
+
+## Services / Practice Areas
+
+### 1. Public Procurement Law (Pravo javne nabave)
+- Preparation and submission of bids
+- Appeals against tender documentation and client decisions
+- Representation in administrative disputes before the State Commission for the Supervision of Public Procurement Procedures (DKOM)
+- Consultation in the process of contracting
+- Representation in court and arbitration proceedings related to public contracts
+- Selected winning cases are listed in a table on the expertise page
+
+### 2. Real Estate & Land Registry Law (Pravo nekretnina i zemljišnih knjiga)
+- Testing land conditions before concluding contracts
+- Advice on contracts
+- Preparation of all types of contracts in real estate trading
+- Registration of property rights in the land registry
+- Representation in ownership disputes
+- Preparation of documents for dissolution of co-ownership, condominium, linking land registers, and implementation in land registry
+
+### 3. Labour Law & Employment Contracts (Radno pravo i ugovori o radu)
+- Drafting and negotiating employment contracts, non-compete and confidentiality agreements
+- Review of general acts and internal company policies
+- Representation in labour disputes (unlawful termination, unpaid wages, discrimination)
+- Advising on restructuring, redundancies, and large-scale dismissals
+- Support during trade union negotiations and industrial action
+- Due diligence of employment-related risks in M&A transactions
+
+### 4. General Legal Support (Opće pravne usluge)
+- Business contracts, commercial agreements, terms of business
+- Company law, incorporation, corporate restructuring, and M&A
+- Due diligence for transactions and investments
+- Debt collection and enforcement of claims
+- Inheritance proceedings and family property law
+- Administrative procedures and representation before public authorities
+- Constitutional complaints and fundamental rights protection
+- Mediation and alternative dispute resolution
+
+## Team
+
+1. Marijan Vešligaj — Attorney at Law (Odvjetnik)
+   - Practice lead: Public Procurement, Labour Law
+
+2. Krešimir Sliepčević — Attorney at Law (Odvjetnik)
+   - Practice lead: Real Estate, General Legal, Company Law
+
+3. Nikolina Šajnović — Associate (Odvjetnički pripravnik)
+   - Practice: Public Procurement
+
+4. Matea Kušević — Associate (Odvjetnički pripravnik)
+   - Practice: Public Procurement
+
+## Key Credentials
+
+- Certified for Public Procurement
+- Authorised Mediator
+- Specialised DKOM Practice (State Commission for Public Procurement)
+- SME-Focused Legal Support
+- Dispute Prevention Philosophy
+
+## Important Documents
+
+The firm publishes selected winning public procurement case decisions as PDF documents in the `/docs` directory. These documents are referenced on the Public Procurement expertise page.
+
+## Technical Notes
+
+- Framework: Next.js App Router
+- Styling: Tailwind CSS + Custom Sass/CSS
+- Language switching: Internal routed alternates (e.g., `/expertise/public-procurement` and `/hr/strucnost/javna-nabava` are mutual alternates)
+- Analytics: Vercel Analytics (production only)
+- No explicit SEO meta for expertise pages yet (planned enhancement)
