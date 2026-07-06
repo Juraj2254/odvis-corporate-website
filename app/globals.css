@@ -291,7 +291,7 @@ a {
   letter-spacing: 0.08em;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.82);
-  text-transform: none;
+  text-transform: lowercase;
   transition: color 0.2s ease;
 }
 
@@ -399,7 +399,7 @@ a {
   letter-spacing: 0.08em;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.82);
-  text-transform: none;
+  text-transform: lowercase;
   transition: color 0.2s ease;
 }
 
@@ -409,7 +409,7 @@ a {
 
 .header__expertise-option--active {
   color: #FFFFFF;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .header__expertise-dropdown--open .header__expertise-menu {

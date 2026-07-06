@@ -1,175 +1,67 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
+import { HrHeader } from "@/components/layout/hr-header"
+import useScrollReveal from "@/lib/use-scroll-reveal"
+import {Carousel, TestimonialCard} from "@/components/ui/retro-testimonial"
+import type {iTestimonial} from "@/components/ui/retro-testimonial"
 
 export default function Page() {
-  const [firmOpen, setFirmOpen] = useState(false)
-  const [expertiseOpen, setExpertiseOpen] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
-  const firmRef = useRef<HTMLDivElement>(null)
-  const expertiseRef = useRef<HTMLDivElement>(null)
-  const langRef = useRef<HTMLDivElement>(null)
-  const firmTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const expertiseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useScrollReveal()
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (firmRef.current && !firmRef.current.contains(event.target as Node)) {
-        setFirmOpen(false)
-      }
-      if (expertiseRef.current && !expertiseRef.current.contains(event.target as Node)) {
-        setExpertiseOpen(false)
-      }
-      if (langRef.current && !langRef.current.contains(event.target as Node)) {
-        setLangOpen(false)
-      }
-    }
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setFirmOpen(false)
-        setExpertiseOpen(false)
-        setLangOpen(false)
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside)
-    document.addEventListener("keydown", handleEscape)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("keydown", handleEscape)
-    }
-  }, [])
+  const croatianQuotes: iTestimonial[] = [
+    {
+      name: "Charles Hamilton Houston",
+      designation: "Afroamerički pravnik",
+      description: "Pravnik je ili socijalni inženjer, ili parazit.",
+      profileImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Charles_Hamilton_Houston_2.jpg/800px-Charles_Hamilton_Houston_2.jpg",
+    },
+    {
+      name: "Sun Cu",
+      designation: "Kineski vojni strateg",
+      description: "Najbolje je pobijediti bez borbe.",
+      profileImage: "https://upload.wikimedia.org/wikipedia/commons/c/cf/%E5%90%B4%E5%8F%B8%E9%A9%AC%E5%AD%99%E6%AD%A6.jpg",
+    },
+    {
+      name: "Latinska izreka",
+      designation: "Mudrost starog Rima",
+      description: "Dvostruko daje tko brzo daje.",
+      profileImage: "https://images.unsplash.com/photo-1552832230-c0197dd311b5",
+    },
+    {
+      name: "Latinska izreka",
+      designation: "Mudrost starog Rima",
+      description: "Popuštaj i otići ćeš kao pobjednik.",
+      profileImage: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+    },
+    {
+      name: "Latinska izreka",
+      designation: "Mudrost starog Rima",
+      description: "Više vrijedi promišljeno raditi nego razborito misliti.",
+      profileImage: "https://images.unsplash.com/photo-1505664194779-8beaceb93744",
+    },
+  ]
 
-  const openFirm = () => {
-    if (firmTimer.current) clearTimeout(firmTimer.current)
-    setFirmOpen(true)
-  }
-  const closeFirm = () => {
-    firmTimer.current = setTimeout(() => setFirmOpen(false), 200)
-  }
-  const toggleFirm = () => setFirmOpen((prev) => !prev)
-
-  const openExpertise = () => {
-    if (expertiseTimer.current) clearTimeout(expertiseTimer.current)
-    setExpertiseOpen(true)
-  }
-  const closeExpertise = () => {
-    expertiseTimer.current = setTimeout(() => setExpertiseOpen(false), 200)
-  }
-  const toggleExpertise = () => setExpertiseOpen((prev) => !prev)
-
-  const openLang = () => {
-    if (langTimer.current) clearTimeout(langTimer.current)
-    setLangOpen(true)
-  }
-  const closeLang = () => {
-    langTimer.current = setTimeout(() => setLangOpen(false), 200)
-  }
-  const toggleLang = () => setLangOpen((prev) => !prev)
+  const croatianQuoteCards = croatianQuotes.map((quote, index) => (
+    <TestimonialCard key={index} testimonial={quote} index={index} />
+  ))
 
   return (
     <>
-      {/* HEADER */}
-      <html lang="hr" />
-      <header className="header">
-        <div className="container header__inner">
-          <a href="/" aria-label="ODVIS Početna">
-            <img src="/logos/odvis-wordmark-primary-light.svg" alt="ODVIS" className="header__logo" />
-          </a>
-
-          <nav className="header__nav" aria-label="Glavna navigacija">
-            <a href="#usluge" className="header__nav-link">USLUGE</a>
-            <div
-              ref={expertiseRef}
-              className={`header__expertise-dropdown${expertiseOpen ? " header__expertise-dropdown--open" : ""}`}
-              aria-label="Stručnost"
-              onMouseEnter={openExpertise}
-              onMouseLeave={closeExpertise}
-            >
-              <button
-                className="header__expertise-trigger"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={expertiseOpen}
-                onClick={toggleExpertise}
-              >
-                <span className="header__expertise-trigger-text">STRUČNOST</span>
-                <svg className="header__expertise-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div className="header__expertise-menu" role="menu" aria-label="Opcije stručnosti">
-                <a href="/hr/strucnost/javna-nabava" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Javna nabava</a>
-                <a href="/hr/strucnost/nekretnine" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Nekretnine</a>
-                <a href="/hr/strucnost/radno-pravo" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Radno pravo</a>
-                <a href="/hr/strucnost/opce-pravne-usluge" className="header__expertise-option" role="menuitem" onClick={() => setExpertiseOpen(false)}>Opće pravo</a>
-              </div>
-            </div>
-            <div
-              ref={firmRef}
-              className={`header__firm-dropdown${firmOpen ? " header__firm-dropdown--open" : ""}`}
-              aria-label="Ured"
-              onMouseEnter={openFirm}
-              onMouseLeave={closeFirm}
-            >
-              <button
-                className="header__firm-trigger"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={firmOpen}
-                onClick={toggleFirm}
-              >
-                <span className="header__firm-trigger-text">URED</span>
-                <svg className="header__firm-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div className="header__firm-menu" role="menu" aria-label="Opcije ureda">
-                <a href="#o-nama" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>o nama</a>
-                <a href="/hr/tim" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>tim</a>
-                <a href="#kontakt" className="header__firm-option" role="menuitem" onClick={() => setFirmOpen(false)}>kontakt</a>
-              </div>
-            </div>
-          </nav>
-
-          <div className="header__contact">
-            <div
-              ref={langRef}
-              className={`header__lang-dropdown${langOpen ? " header__lang-dropdown--open" : ""}`}
-              aria-label="Odabir jezika"
-              onMouseEnter={openLang}
-              onMouseLeave={closeLang}
-            >
-              <button
-                className="header__lang-trigger"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={langOpen}
-                onClick={toggleLang}
-              >
-                <span className="header__lang-current">HR</span>
-                <svg className="header__lang-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div className="header__lang-menu" role="menu" aria-label="Jezične opcije">
-                <a href="/" className="header__lang-option" role="menuitem" onClick={() => setLangOpen(false)}>en</a>
-                <a href="#" className="header__lang-option header__lang-option--active" role="menuitem" onClick={() => setLangOpen(false)}>HR</a>
-              </div>
-            </div>
-            <a href="/hr#kontakt" className="header__cta">KONTAKT</a>
-            <button className="header__menu-btn" aria-label="Otvori izbornik">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <HrHeader light={false} />
 
       <main>
         {/* HERO */}
-        <section className="hero">
+        <section className="hero reveal">
+          <div className="hero__bg">
+            <Image
+              src="/images/hero.jpg"
+              alt="Moderna arhitektura"
+              fill
+              className="hero__bg-img"
+              priority
+            />
+          </div>
           <div className="container hero__inner">
             <h1 className="hero__title">
               The law is full of edges.<br />
@@ -179,7 +71,7 @@ export default function Page() {
         </section>
 
         {/* SERVICES */}
-        <section className="services" id="usluge">
+        <section className="services reveal" id="usluge">
           <div className="container">
             <div className="section-header">
               <div>
@@ -252,7 +144,7 @@ export default function Page() {
         </section>
 
         {/* ABOUT */}
-        <section className="about" id="o-nama">
+        <section className="about reveal" id="o-nama">
           <div className="container">
             <div className="section-header">
               <div>
@@ -305,7 +197,7 @@ export default function Page() {
         </section>
 
         {/* EXPERTISE */}
-        <section className="expertise" id="strucnost">
+        <section className="expertise reveal" id="strucnost">
           <div className="container">
             <div className="section-header">
               <div>
@@ -385,8 +277,24 @@ export default function Page() {
           </div>
         </section>
 
+        {/* TESTIMONIALS */}
+        <section className="testimonials reveal" id="citati">
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <span className="section-label">04 PERSPEKTIVE</span>
+                <h2 className="section-title">O pravu i pravdi</h2>
+              </div>
+              <p className="section-description">
+                Riječi iz povijesti koje oblikuju naše razmišljanje o odgovornosti, pravednosti i vladavini prava.
+              </p>
+            </div>
+            <Carousel items={croatianQuoteCards} />
+          </div>
+        </section>
+
         {/* CONTACT */}
-        <section className="contact" id="kontakt">
+        <section className="contact reveal" id="kontakt">
           <div className="container">
             <div className="section-header">
               <div>
@@ -460,39 +368,32 @@ export default function Page() {
             <div className="footer__column">
               <h4 className="footer__column-title">Usluge</h4>
               <ul className="footer__links">
-                <li><a href="#usluge" className="footer__link">Pravo javne nabave</a></li>
-                <li><a href="#usluge" className="footer__link">Pravo nekretnina i zemljišnih knjiga</a></li>
-                <li><a href="#usluge" className="footer__link">Radno pravo i ugovori</a></li>
-                <li><a href="#usluge" className="footer__link">Opće pravne usluge</a></li>
+                <li><a href="/hr#usluge" className="footer__link">Pravo javne nabave</a></li>
+                <li><a href="/hr#usluge" className="footer__link">Pravo nekretnina i zemljišnih knjiga</a></li>
+                <li><a href="/hr#usluge" className="footer__link">Radno pravo i ugovori</a></li>
+                <li><a href="/hr#usluge" className="footer__link">Opće pravne usluge</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
               <h4 className="footer__column-title">Stručnost</h4>
               <ul className="footer__links">
-                <li><a href="#strucnost" className="footer__link">Praksa pred DKOM-om</a></li>
-                <li><a href="#strucnost" className="footer__link">Žalbe na natječajnu dokumentaciju</a></li>
-                <li><a href="#strucnost" className="footer__link">Upravni sporovi</a></li>
-                <li><a href="#strucnost" className="footer__link">Jednako postupanje</a></li>
+                <li><a href="/hr/strucnost/javna-nabava" className="footer__link">Praksa pred DKOM-om</a></li>
               </ul>
             </div>
 
             <div className="footer__column">
               <h4 className="footer__column-title">Ured</h4>
               <ul className="footer__links">
-                <li><a href="#o-nama" className="footer__link">O nama</a></li>
+                <li><a href="/hr#o-nama" className="footer__link">O nama</a></li>
                 <li><a href="/hr/tim" className="footer__link">Tim</a></li>
-                <li><a href="#kontakt" className="footer__link">Kontakt</a></li>
+                <li><a href="/hr#kontakt" className="footer__link">Kontakt</a></li>
               </ul>
             </div>
           </div>
 
           <div className="footer__bottom">
-            <p className="footer__copyright">&copy; 2025 ODVIS. Sva prava pridržana.</p>
-            <div className="footer__legal">
-              <a href="#" className="footer__legal-link">Pravila privatnosti</a>
-              <a href="#" className="footer__legal-link">Pravna napomena</a>
-            </div>
+            <p className="footer__copyright">&copy; 2026 ODVIS. Sva prava pridržana.</p>
           </div>
         </div>
       </footer>
