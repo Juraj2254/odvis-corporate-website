@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /contact/sent/
+Disallow: /contact/error/
+Disallow: /hr/kontakt/
+
+Sitemap: https://odvis.hr/sitemap.xml

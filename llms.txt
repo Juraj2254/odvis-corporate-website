@@ -1,0 +1,24 @@
+# ODVIS — Law Firm Vešligaj and Sliepčević
+
+> Croatian law firm in Zagreb, founded on 3 May 2016. Public procurement (including DKOM proceedings), real estate and land registry, labour law and general legal services. The site is bilingual: English at `/`, Croatian at `/hr/`.
+
+## Pages
+
+- [Home (EN)](https://odvis.hr/): services, about the firm, DKOM practice, contact
+- [Početna (HR)](https://odvis.hr/hr/)
+- [Public Procurement](https://odvis.hr/expertise/public-procurement/): includes selected winning DKOM cases with the decisions as PDF files under `/docs/`
+- [Real Estate and Land Registry Law](https://odvis.hr/expertise/real-estate/)
+- [Labour Law & Employment Contracts](https://odvis.hr/expertise/labour-law/)
+- [General Legal Support](https://odvis.hr/expertise/general-legal/)
+- [Team](https://odvis.hr/team/)
+- [Privacy Policy](https://odvis.hr/privacy/)
+- [Legal Notice](https://odvis.hr/legal-notice/)
+
+Full list with Croatian equivalents: https://odvis.hr/sitemap.xml
+
+## Contact
+
+- Email: info@odvis.hr
+- Phone: +385 1 6521 072
+- Address: Froudeova ulica 9, 10000 Zagreb, Croatia
+- Office hours: Monday to Friday, 09:00–17:00

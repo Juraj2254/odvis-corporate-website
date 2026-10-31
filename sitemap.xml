@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://odvis.hr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/tim/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/privatnost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/privacy/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/privatnost/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/privatnost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/privacy/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/pravne-napomene/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/pravne-napomene/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/pravne-napomene/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/expertise/public-procurement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/public-procurement/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/javna-nabava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/public-procurement/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/strucnost/javna-nabava/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/public-procurement/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/javna-nabava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/public-procurement/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/expertise/real-estate/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/nekretnine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/real-estate/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/strucnost/nekretnine/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/real-estate/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/nekretnine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/real-estate/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/expertise/labour-law/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/labour-law/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/radno-pravo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/labour-law/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/strucnost/radno-pravo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/labour-law/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/radno-pravo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/labour-law/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/expertise/general-legal/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/general-legal/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/opce-pravne-usluge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/general-legal/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/strucnost/opce-pravne-usluge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/expertise/general-legal/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/strucnost/opce-pravne-usluge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/expertise/general-legal/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/team/marijan-vesligaj/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/marijan-vesligaj/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/marijan-vesligaj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/marijan-vesligaj/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/tim/marijan-vesligaj/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/marijan-vesligaj/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/marijan-vesligaj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/marijan-vesligaj/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/team/kresimir-sliepcevic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/kresimir-sliepcevic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/kresimir-sliepcevic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/kresimir-sliepcevic/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/tim/kresimir-sliepcevic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/kresimir-sliepcevic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/kresimir-sliepcevic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/kresimir-sliepcevic/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/team/nikolina-sajnovic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/nikolina-sajnovic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/nikolina-sajnovic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/nikolina-sajnovic/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/tim/nikolina-sajnovic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/nikolina-sajnovic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/nikolina-sajnovic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/nikolina-sajnovic/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/team/matea-kusevic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/matea-kusevic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/matea-kusevic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/matea-kusevic/"/>
+  </url>
+  <url>
+    <loc>https://odvis.hr/hr/tim/matea-kusevic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odvis.hr/team/matea-kusevic/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://odvis.hr/hr/tim/matea-kusevic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://odvis.hr/team/matea-kusevic/"/>
+  </url>
+</urlset>

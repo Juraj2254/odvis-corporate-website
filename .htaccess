@@ -1,0 +1,78 @@
+# odvis.hr — server configuration for LiteSpeed / Apache (shared hosting, public_html)
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+DirectorySlash On
+ErrorDocument 404 /404.html
+
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .json .xml .txt .webmanifest .svg
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddType application/xml .xml
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Certificate validation (Let's Encrypt / AutoSSL) must stay reachable as-is.
+  RewriteRule ^\.well-known/ - [L]
+
+  # One canonical origin: https://odvis.hr (no www). Keep in sync with `site` in astro.config.mjs.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+  # URLs of the previous site.
+  RewriteRule ^team/member-01/?$ /team/nikolina-sajnovic/ [R=301,L]
+  RewriteRule ^team/member-02/?$ /team/matea-kusevic/ [R=301,L]
+  RewriteRule ^team/member-03/?$ /team/marijan-vesligaj/ [R=301,L]
+  RewriteRule ^team/member-04/?$ /team/kresimir-sliepcevic/ [R=301,L]
+  RewriteRule ^hr/tim/member-01/?$ /hr/tim/nikolina-sajnovic/ [R=301,L]
+  RewriteRule ^hr/tim/member-02/?$ /hr/tim/matea-kusevic/ [R=301,L]
+  RewriteRule ^hr/tim/member-03/?$ /hr/tim/marijan-vesligaj/ [R=301,L]
+  RewriteRule ^hr/tim/member-04/?$ /hr/tim/kresimir-sliepcevic/ [R=301,L]
+
+  # Parent paths without a page of their own.
+  RewriteRule ^expertise/?$ /#services [R=301,NE,L]
+  RewriteRule ^hr/strucnost/?$ /hr/#usluge [R=301,NE,L]
+  RewriteRule ^contact/?$ /#contact [R=301,NE,L]
+  RewriteRule ^hr/kontakt/?$ /hr/#kontakt [R=301,NE,L]
+</IfModule>
+
+# Never serve dotfiles (.htaccess, .git, .env …).
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+
+  # HTML is revalidated on every visit so content updates appear immediately.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  # Files outside /assets/ keep stable names, so they are cached for a week only.
+  <FilesMatch "\.(ico|png|jpe?g|svg|webp|avif|pdf)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json application/ld+json application/manifest+json image/svg+xml
+</IfModule>
