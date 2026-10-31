@@ -2,4 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/odvishr/public_html/
-    - /bin/rsync -a --exclude='.git' --exclude='.cpanel.yml' ./ $DEPLOYPATH
+    # -rlt, not -a: -a would copy the repo dir's 700 mode and group onto
+    # public_html itself, locking the web server (group nobody) out.
+    - /bin/rsync -rlt --chmod=D755,F644 --exclude='.git' --exclude='.cpanel.yml' ./ $DEPLOYPATH
+    - /bin/chmod 755 $DEPLOYPATH
